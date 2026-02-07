@@ -1,72 +1,284 @@
 /* VARIABLES GLOBALES */
 :root {
-    --color-fondo: #0d0d0d;
-    --color-texto: #f2f2f2;
-    --color-acento: #ff6a00; /* Naranja Division */
-    --color-secundario: #1a1a1a;
+  --color-fondo: #0d0d0d;
+  --color-texto: #f2f2f2;
+  --color-acento: #ff6a00; /* Naranja Division */
+  --color-secundario: #1a1a1a;
 
-    --fuente-principal: 'Segoe UI', Arial, sans-serif;
+  --fuente-principal: "Segoe UI", Arial, sans-serif;
 
-    --padding-base: 15px;
-    --borde-redondo: 6px;
+  --padding-base: 15px;
+  --borde-redondo: 6px;
+    /* COLORES POR NIVEL */
+  --color-civil: #00ff66;
+  --color-agente: #ff9d00;
+  --color-renegado: #ff1a1a;
+  --color-hunter: #0099ff;
+
+
 }
 
 /* ESTILOS GENERALES */
 body {
-    margin: 0;
-    padding: 0;
-    background-color: var(--color-fondo);
-    color: var(--color-texto);
-    font-family: var(--fuente-principal);
-}
+  margin: 0;
+  padding: 0;
 
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* altura mínima de toda la pantalla */
+
+  background-color: var(--color-fondo);
+  background-image: url("../imagenes/Imgglobal/Fondologo.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+
+  color: var(--color-texto);
+  font-family: var(--fuente-principal);
+    filter: brightness(1);
+  transition: filter 0.4s ease-in-out;
+}
+body.fade-out {
+  filter: brightness(0);
+}
 /* HEADER */
-header {
-    text-align: center;
-    padding: 20px;
-    background-color: var(--color-secundario);
-    border-bottom: 2px solid var(--color-acento);
+.header-con-logos {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 20px;
+  background-color: var(--color-secundario);
+  border-bottom: 2px solid var(--color-acento);
 }
 
-header h1 {
-    margin: 0;
-    color: var(--color-acento);
+.logo-header {
+  width: 200px; /* Ajusta el tamaño si lo ves muy grande o pequeño */
+  height: 200px; /* Mantiene la proporción del logo */
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.titulo-header {
+  text-align: center;
+}
+
+.titulo-header h1 {
+  margin: 0;
+  color: var(--color-acento);
+  font-size: 2.8rem; /* tamaño grande y elegante */
+  letter-spacing: 2px; /* separación estilo Division */
+  font-weight: 700;
+}
+
+.titulo-header p {
+  margin: 0;
+  font-size: 1.2rem; /* subtítulo más visible */
+  opacity: 0.85;
+  letter-spacing: 1px;
 }
 
 /* MENÚ GLOBAL */
 nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 10px;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    background-color: var(--color-secundario);
+  list-style: none;
+  margin: 0;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  background-color: var(--color-secundario);
 }
 
 nav a {
-    color: var(--color-texto);
-    text-decoration: none;
-    padding: 10px 15px;
-    border-radius: var(--borde-redondo);
-    transition: 0.3s;
+  color: var(--color-texto);
+  text-decoration: none;
+  padding: 10px 15px;
+  border-radius: var(--borde-redondo);
+  transition: 0.3s;
 }
 
 nav a:hover {
+  background-color: var(--color-acento);
+  color: #000;
+}
+/* BOTÓN ACTIVO SEGÚN LA PÁGINA */
+.btn-inicio.activo {
     background-color: var(--color-acento);
     color: #000;
 }
 
+.btn-civil.activo {
+    background-color: var(--color-civil);
+    color: #000;
+}
+
+.btn-agente.activo {
+    background-color: var(--color-agente);
+    color: #000;
+}
+
+.btn-renegado.activo {
+    background-color: var(--color-renegado);
+    color: #fff;
+}
+
+.btn-hunter.activo {
+    background-color: var(--color-hunter);
+    color: #000;
+}
+
+/* COLORES DEL MENÚ POR SECCIÓN */
+.btn-inicio:hover {
+    background-color: var(--color-acento); /* naranja */
+    color: #000;
+}
+
+.btn-civil:hover {
+    background-color: var(--color-civil);
+    color: #000;
+}
+
+.btn-agente:hover {
+    background-color: var(--color-agente);
+    color: #000;
+}
+
+.btn-renegado:hover {
+    background-color: var(--color-renegado);
+    color: #fff;
+}
+
+.btn-hunter:hover {
+    background-color: var(--color-hunter);
+    color: #000;
+}
 /* CONTENIDO */
 main {
-    padding: var(--padding-base);
+  flex: 1; /* ocupa todo el espacio disponible */
+  padding: var(--padding-base);
+}
+.bienvenida {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 25px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+.bienvenida h2 {
+  color: var(--color-acento);
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+.bienvenida p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+.niveles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+/*Contenido-Targetas*/
+
+.card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  background: rgba(0, 0, 0, 0.55);
+  padding: 20px;
+  border-radius: 10px;
+  border: 2px solid var(--color-secundario);
+  transition: 0.3s;
+}
+
+/* Imagen grande a la izquierda */
+.icono-card {
+  width: 120px; /* tamaño grande */
+  height: 120px;
+  object-fit: cover; /* evita deformaciones */
+  border-radius: 6px; /* esquinas suaves, NO circular */
+}
+
+/* Contenido centrado */
+.contenido-card {
+  flex: 1;
+  text-align: center;
+}
+
+.contenido-card h3 {
+  font-size: 1.8rem;
+  margin: 0 0 10px;
+  color: var(--color-acento);
+}
+
+.contenido-card p {
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+/* COLORES DE CADA NIVEL */
+.civil:hover {
+    border-color: var(--color-civil);
+    box-shadow: 0 0 10px var(--color-civil);
+}
+
+.agente:hover {
+    border-color: var(--color-agente);
+    box-shadow: 0 0 10px var(--color-agente);
+}
+
+.renegado:hover {
+    border-color: var(--color-renegado);
+    box-shadow: 0 0 10px var(--color-renegado);
+}
+
+.hunter:hover {
+    border-color: var(--color-hunter);
+    box-shadow: 0 0 10px var(--color-hunter);
+}
+
+.progreso {
+  text-align: center;
 }
 
 /* FOOTER */
 footer {
+  text-align: center;
+  padding: 10px;
+  background-color: var(--color-secundario);
+  border-top: 2px solid var(--color-acento);
+}
+
+/* RESPONSIVE PARA CELULARES */
+@media (max-width: 768px) {
+  .card {
+    flex-direction: column; /* imagen arriba, texto abajo */
     text-align: center;
-    padding: 10px;
-    margin-top: 20px;
-    background-color: var(--color-secundario);
-    border-top: 2px solid var(--color-acento);
+  }
+
+  .icono-card {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+  }
+
+  .contenido-card h3 {
+    font-size: 1.6rem;
+  }
+
+  .contenido-card p {
+    font-size: 1rem;
+  }
+
+  .header-con-logos {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .logo-header {
+    width: 140px;
+    height: 140px;
+  }
 }

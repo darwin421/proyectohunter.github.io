@@ -2,3 +2,26 @@
     --color-acento: #ffb300;
     --color-fondo: #0d0d0d;
 }
+.proximamente {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 40px;
+    border-radius: 10px;
+    text-align: center;
+    margin: 40px auto;
+    max-width: 600px;
+    border: 2px solid var(--color-agente);
+    box-shadow: 0 0 15px var(--color-agente);
+}
+
+.proximamente h2 {
+    font-size: 2.5rem;
+    color: var(--color-agente);
+    text-shadow: 0 0 10px var(--color-agente);
+    margin-bottom: 10px;
+}
+
+.proximamente p {
+    font-size: 1.2rem;
+    color: var(--color-texto);
+    opacity: 0.9;
+}

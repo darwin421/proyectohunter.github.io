@@ -1,51 +1,131 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Proyecto Hunter - The Division 2 LATAM</title>
-    <link rel="stylesheet" href="estilos/global.css">
-</head>
+    <link rel="stylesheet" href="estilos/global.css" />
+  </head>
 
-<body>
-
+  <body>
     <!-- Encabezado principal -->
-    <header>
+    <header class="header-con-logos">
+      <img
+        src="imagenes/Imgglobal/LogoThedivision.png"
+        alt="Logo The Division"
+        class="logo-header"
+      />
+      <div class="titulo-header">
         <h1>Proyecto Hunter</h1>
         <p>Guías, builds y herramientas para The Division 2 en español LATAM</p>
+      </div>
+
+      <img
+        src="imagenes/Imgglobal/LogoHunter.jpg"
+        alt="Logo Hunter"
+        class="logo-header"
+      />
     </header>
 
     <!-- Menú principal por niveles -->
-    <nav>
-        <ul>
-            <li><a href="#">Inicio</a></li>
-            <li><a href="niveles/civil.html">Civil</a></li>
-            <li><a href="niveles/agente.html">Agente</a></li>
-            <li><a href="niveles/renegado.html">Renegado</a></li>
-            <li><a href="niveles/hunter.html">Hunter</a></li>
-        </ul>
-    </nav>
+<nav>
+  <ul>
+    <li><a href="index.html" class="btn-inicio">Inicio</a></li>
+    <li><a href="niveles/civil.html" class="btn-civil">Civil</a></li>
+    <li><a href="niveles/agente.html" class="btn-agente">Agente</a></li>
+    <li><a href="niveles/renegado.html" class="btn-renegado">Renegado</a></li>
+    <li><a href="niveles/hunter.html" class="btn-hunter">Hunter</a></li>
+  </ul>
+</nav>
 
     <!-- Contenido principal -->
     <main>
-        <h2>Bienvenido, agente</h2>
-        <p>Este es el inicio del Proyecto Hunter. Aquí encontrarás contenido organizado por niveles temáticos:</p>
+      <section class="bienvenida">
+        <h2>Bienvenido, Agente</h2>
+        <p>
+          Este es el inicio del Proyecto Hunter. Aquí encontrarás guías, builds
+          y herramientas organizadas por niveles temáticos para ayudarte a
+          progresar en The Division 2.
+        </p>
+      </section>
 
-        <ul>
-            <li><strong>Civil:</strong> Guías básicas, primeros pasos, progresión inicial.</li>
-            <li><strong>Agente:</strong> Builds estándar, farmeo eficiente, talentos útiles.</li>
-            <li><strong>Renegado:</strong> Builds avanzadas, optimización, PvP, DZ.</li>
-            <li><strong>Hunter:</strong> Contenido élite, secretos, coleccionables, desafíos.</li>
-        </ul>
+      <section class="niveles">
+        <div class="card civil">
+          <img
+            src="imagenes/Civil/Civiles.png"
+            alt="Civil"
+            class="icono-card"
+          />
+          <div class="contenido-card">
+            <h3>Civil</h3>
+            <p>Guías básicas, primeros pasos y progresión inicial.</p>
+          </div>
+        </div>
 
-        <p>El sitio crecerá poco a poco según las necesidades de la comunidad LATAM.</p>
+        <div class="card agente">
+          <img
+            src="imagenes/Agente/Agente.jpg"
+            alt="Agente"
+            class="icono-card"
+          />
+          <div class="contenido-card">
+            <h3>Agente</h3>
+            <p>Builds estándar, farmeo eficiente y talentos útiles.</p>
+          </div>
+        </div>
+
+        <div class="card renegado">
+          <img
+            src="imagenes/Renegado/Renegado.jpg"
+            alt="Renegado"
+            class="icono-card"
+          />
+          <div class="contenido-card">
+            <h3>Renegado</h3>
+            <p>Builds avanzadas, optimización, PvP y Zona Oscura.</p>
+          </div>
+        </div>
+
+        <div class="card hunter">
+          <img
+            src="imagenes/Hunter/Hunter.jpg"
+            alt="Hunter"
+            class="icono-card"
+          />
+          <div class="contenido-card">
+            <h3>Hunter</h3>
+            <p>Contenido élite, secretos, coleccionables y desafíos.</p>
+          </div>
+        </div>
+      </section>
+
+      <p class="progreso">
+        El sitio crecerá poco a poco según las necesidades de la comunidad
+        LATAM.
+      </p>
     </main>
 
     <!-- Pie de página -->
     <footer>
-        <p>Proyecto Hunter © 2026 - Comunidad LATAM de The Division 2</p>
+      <p>Proyecto Hunter © 2026 - Comunidad LATAM de The Division 2</p>
     </footer>
 
     <script src="scripts/app.js"></script>
-</body>
+    <script>
+document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll("nav a").forEach(link => {
+        link.addEventListener("click", e => {
+            e.preventDefault();
+            const url = link.href;
+
+            document.body.classList.add("fade-out");
+
+            setTimeout(() => {
+                window.location.href = url;
+            }, 400);
+        });
+    });
+});
+</script>
+  </body>
 </html>
