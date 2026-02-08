@@ -1,68 +1,95 @@
 <!doctype html>
 <html lang="es">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Civil - Proyecto Hunter</title>
 
-    <!-- Estilos globales -->
     <link rel="stylesheet" href="../estilos/global.css" />
-
-    <!-- Estilos propios de la página -->
     <link rel="stylesheet" href="../estilos/civil.css" />
-</head>
+  </head>
 
-<body>
-
+  <body>
     <!-- HEADER -->
     <header class="header-con-logos">
-        <img src="../imagenes/Civil/Civiles.png" class="logo-header" alt="Logo Civil">
-        <div class="titulo-header">
-            <h1>Civil</h1>
-            <p>Guías y herramientas en español para The Division 2</p>
-        </div>
-        <img src="../imagenes/Imgglobal/LogoHunter.jpg" class="logo-header" alt="">
+      <img
+        src="../imagenes/Civil/Civiles.png"
+        class="logo-header"
+        alt="Logo Civil"
+      />
+      <div class="titulo-header">
+        <h1>Civil</h1>
+        <p>Guías y herramientas en español para The Division 2</p>
+      </div>
+      <img
+        src="../imagenes/Imgglobal/LogoHunter.jpg"
+        class="logo-header"
+        alt=""
+      />
     </header>
 
-    <!-- MENÚ -->
-<nav>
-  <ul>
-    <li><a href="../index.html" class="btn-inicio">Inicio</a></li>
-    <li><a href="civil.html" class="btn-civil activo">Civil</a></li>
-    <li><a href="agente.html" class="btn-agente">Agente</a></li>
-    <li><a href="renegado.html" class="btn-renegado">Renegado</a></li>
-    <li><a href="hunter.html" class="btn-hunter">Hunter</a></li>
-  </ul>
-</nav>
+    <!-- BOTÓN MENÚ MÓVIL -->
+    <button class="btn-menu-movil" onclick="toggleMenu()">☰ Menú</button>
 
-    <!-- CONTENIDO DE LA PÁGINA -->
-<main>
-    <div class="proximamente">
-        <h2>Muy pronto</h2>
-        <p>Estamos preparando contenido exclusivo para esta sección.</p>
-    </div>
-</main>
+    <!-- MENÚ PRINCIPAL -->
+    <nav>
+      <ul>
+        <li><a href="../index.html" class="btn-inicio">Inicio</a></li>
+        <li><a href="civil.html" class="btn-civil activo">Civil</a></li>
+        <li><a href="agente.html" class="btn-agente">Agente</a></li>
+        <li><a href="renegado.html" class="btn-renegado">Renegado</a></li>
+        <li><a href="hunter.html" class="btn-hunter">Hunter</a></li>
+      </ul>
+    </nav>
 
-    <!-- FOOTER -->
-    <footer>
-        Proyecto Hunter © 2026 - Comunidad LATAM de The Division 2
-    </footer>
+    <!-- CONTENIDO -->
+    <main class="page-container">
+      <!-- SIDEBAR (FUERA DEL MAIN) -->
+      <div class="sidebar">
+        <h3>Civil</h3>
+        <ul>
+          <li>
+            <a
+              href="#"
+              onclick="
+                cargarContenido('../guias/guiascivil/presentacioncivil.html');
+                return false;
+              "
+              >Presentación</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              onclick="
+                cargarContenido('../guias/guiascivil/atributosdeequipos.html');
+                return false;
+              "
+              >Atributos de Equipo</a
+            >
+          </li>
+        </ul>
+      </div>
+      <div class="content" id="contenido"></div>
+    </main>
 
-    <!-- SCRIPT DE TRANSICIÓN -->
+    <script src="../scripts/civil.js"></script>
+
+    <footer>Proyecto Hunter © 2026 - Comunidad LATAM de The Division 2</footer>
+
     <script>
-        document.querySelectorAll("nav a").forEach(link => {
-            link.addEventListener("click", function(e) {
-                e.preventDefault();
-                const url = this.href;
+      document.querySelectorAll("nav a").forEach((link) => {
+        link.addEventListener("click", function (e) {
+          e.preventDefault();
+          const url = this.href;
 
-                document.body.classList.add("fade-out");
+          document.body.classList.add("fade-out");
 
-                setTimeout(() => {
-                    window.location.href = url;
-                }, 400);
-            });
+          setTimeout(() => {
+            window.location.href = url;
+          }, 400);
         });
+      });
     </script>
-
-</body>
+  </body>
 </html>

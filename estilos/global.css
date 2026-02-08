@@ -253,34 +253,27 @@ footer {
 
 /* RESPONSIVE PARA CELULARES */
 @media (max-width: 768px) {
-  .card {
-    flex-direction: column; /* imagen arriba, texto abajo */
-    text-align: center;
-  }
 
-  .icono-card {
-    width: 100%;
-    height: auto;
-    border-radius: 6px;
-  }
+    .header-con-logos {
+        flex-direction: row;      /* NO vertical */
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        padding: 10px;
+    }
 
-  .contenido-card h3 {
-    font-size: 1.6rem;
-  }
+    .logo-header {
+        width: 70px;              /* tamaño razonable */
+        height: 70px;
+    }
 
-  .contenido-card p {
-    font-size: 1rem;
-  }
+    .titulo-header h1 {
+        font-size: 1.4rem;
+    }
 
-  .header-con-logos {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .logo-header {
-    width: 140px;
-    height: 140px;
-  }
+    .titulo-header p {
+        font-size: 0.8rem;
+    }
 }
 /* MENÚ RESPONSIVE PARA MÓVILES */
 @media (max-width: 600px) {
@@ -290,6 +283,7 @@ footer {
         justify-content: center;
         gap: 8px;
         padding: 10px;
+        flex-direction: row !important;
     }
 
     nav ul li a {
@@ -310,34 +304,32 @@ footer {
         font-size: 0.8rem;
     }
 }
-/* MENÚ RESPONSIVE UNIVERSAL */
-@media (max-width: 800px) {
-    nav ul {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 6px;
-        padding: 10px;
-    }
 
-    nav ul li {
-        flex: 1 1 auto;
-        text-align: center;
-        min-width: 90px;
-    }
-
-    nav ul li a {
-        display: block;
-        padding: 8px 10px;
-        font-size: 0.85rem;
-        white-space: nowrap;
-    }
-}
 
 /* Ajuste extra para pantallas MUY pequeñas */
 @media (max-width: 360px) {
     nav ul li a {
         font-size: 0.75rem;
         padding: 6px 8px;
+    }
+}
+@media (max-width: 800px) {
+    nav ul {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;        /* NO SE PARTE EN DOS FILAS */
+        overflow-x: auto;         /* SCROLL HORIZONTAL */
+        white-space: nowrap;      /* TODO EN UNA SOLA LÍNEA */
+        gap: 10px;
+        padding: 10px;
+        scrollbar-width: none;
+    }
+
+    nav ul::-webkit-scrollbar {
+        display: none;
+    }
+
+    nav ul li {
+        flex: 0 0 auto;
     }
 }
