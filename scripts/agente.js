@@ -15,7 +15,7 @@ function cargarContenido(ruta) {
 
 // CARGAR PRESENTACIÓN POR DEFECTO AL ENTRAR A LA PÁGINA
 document.addEventListener("DOMContentLoaded", () => {
-    cargarContenido("../guias/guiasagente/presentacionagente.html");
+    cargarContenido("/proyecto-hunter/guias/guiasagente/presentacionagente.html");
 });
 
 // FUNCIÓN PARA MOSTRAR / OCULTAR EL MENÚ EN MÓVIL

@@ -16,7 +16,7 @@ function cargarContenido(ruta) {
 
 // CARGAR PRESENTACIÓN POR DEFECTO AL ENTRAR A LA PÁGINA
 document.addEventListener("DOMContentLoaded", () => {
-    cargarContenido("../guias/guiasrenegado/presentacionrenegado.html");
+    cargarContenido("/proyecto-hunter/guias/guiasrenegado/presentacionrenegado.html");
 });
 
 // FUNCIÓN PARA MOSTRAR / OCULTAR EL MENÚ EN MÓVIL
