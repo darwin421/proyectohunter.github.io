@@ -16,7 +16,7 @@ function cargarContenido(ruta) {
 
 // Cargar por defecto la Presentación al entrar a Civil
 document.addEventListener("DOMContentLoaded", () => {
-    cargarContenido("/proyecto-hunter/guias/guiascivil/presentacioncivil.html");
+    cargarContenido("../guias/guiascivil/presentacioncivil.html");
 });
 function toggleMenu() {
     document.querySelector(".sidebar").classList.toggle("activo");

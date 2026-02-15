@@ -6,22 +6,22 @@
     <title>Hunter - Proyecto Hunter</title>
 
     <!-- Estilos globales -->
-    <link rel="stylesheet" href="/proyecto-hunter/estilos/global.css" />
+    <link rel="stylesheet" href="../estilos/global.css" />
 
     <!-- Estilos propios de la página -->
-    <link rel="stylesheet" href="/proyecto-hunter/estilos/hunter.css" />
+    <link rel="stylesheet" href="../estilos/hunter.css" />
 </head>
 
 <body>
 
     <!-- HEADER -->
     <header class="header-con-logos">
-        <img src="/proyecto-hunter/imagenes/Hunter/Hunter.jpg" class="logo-header" alt="Logo Hunter">
+        <img src="../imagenes/Hunter/Hunter.jpg" class="logo-header" alt="Logo Hunter">
         <div class="titulo-header">
             <h1>Hunter</h1>
             <p>Guías y herramientas en español para The Division 2</p>
         </div>
-        <img src="/proyecto-hunter/imagenes/Imgglobal/LogoHunter.jpg" class="logo-header" alt="">
+        <img src="../imagenes/Imgglobal/LogoHunter.jpg" class="logo-header" alt="">
     </header>
 
     <!-- BOTÓN MENÚ MÓVIL -->
@@ -31,11 +31,11 @@
     <nav>
         <ul>
             <li><a href="/proyecto-hunter/index.html" class="btn-inicio">Inicio</a></li>
-            <li><a href="/proyecto-hunter/niveles/civil.html" class="btn-civil">Civil</a></li>
-            <li><a href="/proyecto-hunter/niveles/agente.html" class="btn-agente">Agente</a></li>
-            <li><a href="/proyecto-hunter/niveles/renegado.html" class="btn-renegado">Renegado</a></li>
-            <li><a href="/proyecto-hunter/niveles/hunter.html" class="btn-hunter activo">Hunter</a></li>
-            <li><a href="/proyecto-hunter/niveles/Agentes.html" class="btn-agentes">Agentes Activos</a></li>
+            <li><a href="civil.html" class="btn-civil">Civil</a></li>
+            <li><a href="agente.html" class="btn-agente">Agente</a></li>
+            <li><a href="renegado.html" class="btn-renegado">Renegado</a></li>
+            <li><a href="hunter.html" class="btn-hunter activo">Hunter</a></li>
+            <li><a href="Agentes.html" class="btn-agentes">Agentes Activos</a></li>
         </ul>
     </nav>
 
@@ -58,21 +58,21 @@
                         <span class="category-arrow">▼</span>
                     </button>
                     <ul class="category-list" style="display: none;">
-                        <li><a href="#" onclick="cargarContenido('/proyecto-hunter/guias/guiashunter/presentacion_hunter.html'); return false;">Presentación Hunter</a></li>
+                        <li><a href="#" onclick="cargarContenido('../guias/guiashunter/presentacion_hunter.html'); return false;">Presentación Hunter</a></li>
                         <li class="submenu-item">
                             <span class="submenu-toggle" onclick="toggleSubmenu(this)">► Equipo</span>
                             <ul class="submenu" style="display: none;">
-                                <li><a href="#" onclick="cargarContenido('/proyecto-hunter/guias/hunter/equipo_tier_1.html'); return false;">Tier 1</a></li>
-                                <li><a href="#" onclick="cargarContenido('/proyecto-hunter/guias/hunter/equipo_tier_2.html'); return false;">Tier 2</a></li>
-                                <li><a href="#" onclick="cargarContenido('/proyecto-hunter/guias/hunter/equipo_tier_3.html'); return false;">Tier 3</a></li>
+                                <li><a href="#" onclick="cargarContenido('../guias/hunter/equipo_tier_1.html'); return false;">Tier 1</a></li>
+                                <li><a href="#" onclick="cargarContenido('../guias/hunter/equipo_tier_2.html'); return false;">Tier 2</a></li>
+                                <li><a href="#" onclick="cargarContenido('../guias/hunter/equipo_tier_3.html'); return false;">Tier 3</a></li>
                             </ul>
                         </li>
                         <li class="submenu-item">
                             <span class="submenu-toggle" onclick="toggleSubmenu(this)">► Armas Especiales</span>
                             <ul class="submenu" style="display: none;">
-                                <li><a href="#" onclick="cargarContenido('/proyecto-hunter/guias/hunter/exoticas.html'); return false;">Exóticas</a></li>
-                                <li><a href="#" onclick="cargarContenido('/proyecto-hunter/guias/hunter/armas_legendarias.html'); return false;">Legendarias</a></li>
-                                <li><a href="#" onclick="cargarContenido('/proyecto-hunter/guias/hunter/armas_unqiue.html'); return false;">Unicas</a></li>
+                                <li><a href="#" onclick="cargarContenido('../guias/hunter/exoticas.html'); return false;">Exóticas</a></li>
+                                <li><a href="#" onclick="cargarContenido('../guias/hunter/armas_legendarias.html'); return false;">Legendarias</a></li>
+                                <li><a href="#" onclick="cargarContenido('../guias/hunter/armas_unqiue.html'); return false;">Unicas</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -89,17 +89,17 @@
                         <li class="submenu-item">
                             <span class="submenu-toggle" onclick="toggleSubmenu(this)">► Especialidades</span>
                             <ul class="submenu" style="display: none;">
-                                <li><a href="#" onclick="cargarContenido('/proyecto-hunter/guias/hunter/especialidad_francotirador.html'); return false;">Francotirador</a></li>
-                                <li><a href="#" onclick="cargarContenido('/proyecto-hunter/guias/hunter/especialidad_demoledor.html'); return false;">Demoledor</a></li>
-                                <li><a href="#" onclick="cargarContenido('/proyecto-hunter/guias/hunter/especialidad_operario.html'); return false;">Operario</a></li>
+                                <li><a href="#" onclick="cargarContenido('../guias/hunter/especialidad_francotirador.html'); return false;">Francotirador</a></li>
+                                <li><a href="#" onclick="cargarContenido('../guias/hunter/especialidad_demoledor.html'); return false;">Demoledor</a></li>
+                                <li><a href="#" onclick="cargarContenido('../guias/hunter/especialidad_operario.html'); return false;">Operario</a></li>
                             </ul>
                         </li>
                         <li class="submenu-item">
                             <span class="submenu-toggle" onclick="toggleSubmenu(this)">► Dispositivos Tácticos</span>
                             <ul class="submenu" style="display: none;">
-                                <li><a href="#" onclick="cargarContenido('/proyecto-hunter/guias/hunter/modo_dron.html'); return false;">Drones</a></li>
-                                <li><a href="#" onclick="cargarContenido('/proyecto-hunter/guias/hunter/modo_torretas.html'); return false;">Torretas</a></li>
-                                <li><a href="#" onclick="cargarContenido('/proyecto-hunter/guias/hunter/modo_minas.html'); return false;">Minas</a></li>
+                                <li><a href="#" onclick="cargarContenido('../guias/hunter/modo_dron.html'); return false;">Drones</a></li>
+                                <li><a href="#" onclick="cargarContenido('../guias/hunter/modo_torretas.html'); return false;">Torretas</a></li>
+                                <li><a href="#" onclick="cargarContenido('../guias/hunter/modo_minas.html'); return false;">Minas</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -116,17 +116,17 @@
                         <li class="submenu-item">
                             <span class="submenu-toggle" onclick="toggleSubmenu(this)">► PvE</span>
                             <ul class="submenu" style="display: none;">
-                                <li><a href="#" onclick="cargarContenido('/proyecto-hunter/guias/hunter/build_daño_puro.html'); return false;">Daño Puro</a></li>
-                                <li><a href="#" onclick="cargarContenido('/proyecto-hunter/guias/hunter/build_control_campo.html'); return false;">Control de Campo</a></li>
-                                <li><a href="#" onclick="cargarContenido('/proyecto-hunter/guias/hunter/build_soporte.html'); return false;">Soporte</a></li>
+                                <li><a href="#" onclick="cargarContenido('../guias/hunter/build_daño_puro.html'); return false;">Daño Puro</a></li>
+                                <li><a href="#" onclick="cargarContenido('../guias/hunter/build_control_campo.html'); return false;">Control de Campo</a></li>
+                                <li><a href="#" onclick="cargarContenido('../guias/hunter/build_soporte.html'); return false;">Soporte</a></li>
                             </ul>
                         </li>
                         <li class="submenu-item">
                             <span class="submenu-toggle" onclick="toggleSubmenu(this)">► PvP</span>
                             <ul class="submenu" style="display: none;">
-                                <li><a href="#" onclick="cargarContenido('/proyecto-hunter/guias/hunter/build_pvp_agresivo.html'); return false;">Agresivo</a></li>
-                                <li><a href="#" onclick="cargarContenido('/proyecto-hunter/guias/hunter/build_pvp_defensivo.html'); return false;">Defensivo</a></li>
-                                <li><a href="#" onclick="cargarContenido('/proyecto-hunter/guias/hunter/build_pvp_hibrido.html'); return false;">Híbrido</a></li>
+                                <li><a href="#" onclick="cargarContenido('../guias/hunter/build_pvp_agresivo.html'); return false;">Agresivo</a></li>
+                                <li><a href="#" onclick="cargarContenido('../guias/hunter/build_pvp_defensivo.html'); return false;">Defensivo</a></li>
+                                <li><a href="#" onclick="cargarContenido('../guias/hunter/build_pvp_hibrido.html'); return false;">Híbrido</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -140,10 +140,10 @@
                         <span class="category-arrow">▼</span>
                     </button>
                     <ul class="category-list" style="display: none;">
-                        <li><a href="#" onclick="cargarContenido('/proyecto-hunter/guias/hunter/raid_guide.html'); return false;">Guía de Raid</a></li>
-                        <li><a href="#" onclick="cargarContenido('/proyecto-hunter/guias/hunter/incursiones.html'); return false;">Incursiones de Elite</a></li>
-                        <li><a href="#" onclick="cargarContenido('/proyecto-hunter/guias/hunter/zona_oscura.html'); return false;">Zona Oscura (DZ)</a></li>
-                        <li><a href="#" onclick="cargarContenido('/proyecto-hunter/guias/hunter/contenido_seasonal.html'); return false;">Contenido Seasonal</a></li>
+                        <li><a href="#" onclick="cargarContenido('../guias/hunter/raid_guide.html'); return false;">Guía de Raid</a></li>
+                        <li><a href="#" onclick="cargarContenido('../guias/hunter/incursiones.html'); return false;">Incursiones de Elite</a></li>
+                        <li><a href="#" onclick="cargarContenido('../guias/hunter/zona_oscura.html'); return false;">Zona Oscura (DZ)</a></li>
+                        <li><a href="#" onclick="cargarContenido('../guias/hunter/contenido_seasonal.html'); return false;">Contenido Seasonal</a></li>
                     </ul>
                 </div>
 
@@ -155,9 +155,9 @@
                         <span class="category-arrow">▼</span>
                     </button>
                     <ul class="category-list" style="display: none;">
-                        <li><a href="#" onclick="cargarContenido('/proyecto-hunter/guias/hunter/tabla_atributos.html'); return false;">Tabla de Atributos</a></li>
-                        <li><a href="#" onclick="cargarContenido('/proyecto-hunter/guias/hunter/tabla_modificadores.html'); return false;">Modificadores</a></li>
-                        <li><a href="#" onclick="cargarContenido('/proyecto-hunter/guias/hunter/diccionario_divisiones.html'); return false;">Diccionario Division</a></li>
+                        <li><a href="#" onclick="cargarContenido('../guias/hunter/tabla_atributos.html'); return false;">Tabla de Atributos</a></li>
+                        <li><a href="#" onclick="cargarContenido('../guias/hunter/tabla_modificadores.html'); return false;">Modificadores</a></li>
+                        <li><a href="#" onclick="cargarContenido('../guias/hunter/diccionario_divisiones.html'); return false;">Diccionario Division</a></li>
                     </ul>
                 </div>
             </div>
@@ -178,7 +178,7 @@
     </footer>
 
     <!-- SCRIPT DEL NIVEL -->
-    <script src="/proyecto-hunter/scripts/hunter.js"></script>
+    <script src="../scripts/hunter.js"></script>
 
     <!-- TRANSICIÓN -->
     <script>
