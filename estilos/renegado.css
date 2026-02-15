@@ -1,27 +1,236 @@
+/* ================================
+   COLORES DEL NIVEL RENEGADO
+================================ */
 :root {
-    --color-acento: #ff1a1a;
-    --color-fondo: #0a0000;
-}
-.proximamente {
-    background: rgba(0, 0, 0, 0.7);
-    padding: 40px;
-    border-radius: 10px;
-    text-align: center;
-    margin: 40px auto;
-    max-width: 600px;
-    border: 2px solid var(--color-renegado);
-    box-shadow: 0 0 15px var(--color-renegado);
+  --color-acento: var(--color-renegado);
+  --color-fondo: #0a0000;
 }
 
-.proximamente h2 {
-    font-size: 2.5rem;
-    color: var(--color-renegado);
-    text-shadow: 0 0 10px var(--color-renegado);
-    margin-bottom: 10px;
+/* ================================
+   CONTENEDOR PRINCIPAL
+================================ */
+.page-container {
+  display: flex;
+  width: 100%;
+  min-height: 80vh;
+  background-color: var(--color-fondo);
 }
 
-.proximamente p {
-    font-size: 1.2rem;
-    color: var(--color-texto);
-    opacity: 0.9;
+body,
+html {
+  overflow-x: hidden;
+}
+
+/* ================================
+   CONTENEDOR INTERNO DEL CONTENIDO
+================================ */
+.content {
+  flex: 1;
+  padding: 20px;
+  color: var(--color-texto);
+  display: flex;
+  justify-content: center;
+}
+
+.content > * {
+  max-width: 900px;
+  width: 100%;
+}
+
+/* ================================
+   SIDEBAR (MENÚ LATERAL)
+================================ */
+.sidebar {
+  width: 250px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 26, 26, 0.1) 0%,
+    rgba(0, 0, 0, 0.5) 100%
+  );
+  padding: 20px;
+  border-left: 3px solid var(--color-renegado);
+  border-right: 3px solid var(--color-renegado);
+  transition: transform 0.3s ease;
+  box-shadow: inset 0 0 20px rgba(255, 26, 26, 0.1);
+}
+
+.sidebar h3 {
+  color: var(--color-renegado);
+  text-align: center;
+  margin-bottom: 20px;
+  text-shadow:
+    0 0 15px var(--color-renegado),
+    0 0 30px var(--color-renegado);
+  font-size: 1.3rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.sidebar ul li::before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: var(--color-renegado);
+  font-size: 1.2rem;
+  opacity: 0;
+  transition: 0.3s ease;
+}
+
+.sidebar ul li:hover::before {
+  opacity: 1;
+}
+
+.sidebar ul li a {
+  color: var(--color-texto);
+  text-decoration: none;
+  padding: 12px 15px;
+  display: block;
+  border-radius: var(--borde-redondo);
+  transition: 0.3s ease;
+  margin-left: 10px;
+  border-left: 2px solid transparent;
+}
+
+.sidebar ul li a:hover {
+  background-color: rgba(255, 26, 26, 0.2);
+  color: var(--color-renegado);
+  box-shadow: 0 0 15px var(--color-renegado);
+  border-left: 2px solid var(--color-renegado);
+  text-shadow: 0 0 5px var(--color-renegado);
+}
+
+/* ================================
+   BOTÓN MENÚ MÓVIL
+================================ */
+.btn-menu-movil {
+  display: none;
+  width: 100%;
+  background-color: var(--color-renegado);
+  color: #000;
+  padding: 12px;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-weight: bold;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.btn-menu-movil:hover {
+  background-color: #ff3333;
+}
+/* ================================
+   PRESENTACIÓN DEL NIVEL*/
+.presentacion-renegado {
+  background: rgba(255, 26, 26, 0.05);
+  padding: 20px;
+  border-radius: 8px;
+  border-left: 4px solid var(--color-renegado);
+}
+
+.presentacion-renegado h2 {
+  color: var(--color-renegado);
+  text-shadow: 0 0 10px var(--color-renegado);
+  margin-bottom: 15px;
+}
+
+.presentacion-renegado h3 {
+  color: var(--color-renegado);
+  margin-top: 20px;
+}
+
+.presentacion-renegado p {
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+/*presentacionequipo*/
+.img-presentacion {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+.equipo-renegado {
+  background: rgba(255, 26, 26, 0.05);
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.equipo-renegado h2 {
+  color: var(--color-renegado);
+  text-shadow: 0 0 10px var(--color-renegado);
+}
+
+.equipo-renegado h3 {
+  color: var(--color-renegado);
+  margin-top: 20px;
+}
+/*habilidasdeshtml*/
+.habilidades-renegado {
+  background: rgba(255, 26, 26, 0.05);
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.habilidades-renegado h2 {
+  color: var(--color-renegado);
+  text-shadow: 0 0 10px var(--color-renegado);
+}
+
+.habilidades-renegado h3 {
+  color: var(--color-renegado);
+  margin-top: 20px;
+}
+/* ================================
+   RESPONSIVE (MODO TELÉFONO)
+================================ */
+@media (max-width: 768px) {
+  /* Mostrar botón móvil */
+  .btn-menu-movil {
+    display: block;
+  }
+
+  /* Sidebar oculto por defecto */
+  .sidebar {
+    position: fixed;
+    top: 120px;
+    left: 0;
+    width: 220px;
+    height: calc(100% - 120px);
+    background: linear-gradient(
+      135deg,
+      rgba(255, 26, 26, 0.15) 0%,
+      rgba(0, 0, 0, 0.7) 100%
+    );
+    transform: translateX(-100%);
+    z-index: 1000;
+    box-shadow: 2px 0 20px rgba(255, 26, 26, 0.3);
+  }
+
+  /* Sidebar visible cuando tiene la clase activo */
+  .sidebar.activo {
+    transform: translateX(0);
+  }
+
+  /* Contenido ocupa todo el ancho */
+  .page-container {
+    flex-direction: column;
+  }
+
+  .content {
+    padding: 15px;
+  }
+
+  .content > * {
+    max-width: 100%;
+  }
 }

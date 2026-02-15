@@ -10,99 +10,80 @@
   <body>
     <!-- Encabezado principal -->
     <header class="header-con-logos">
-      <img
-        src="imagenes/Imgglobal/LogoThedivision.png"
-        alt="Logo The Division"
-        class="logo-header"
-      />
+      <img src="imagenes/Imgglobal/LogoThedivision.png" alt="Logo The Division" class="logo-header" />
       <div class="titulo-header">
         <h1>Proyecto Hunter</h1>
-        <p>Guías, builds y herramientas para The Division 2 en español LATAM</p>
+        <p class="tagline">Guías, builds y herramientas para The Division 2 — Comunidad LATAM</p>
       </div>
-
-      <img
-        src="imagenes/Imgglobal/LogoHunter.jpg"
-        alt="Logo Hunter"
-        class="logo-header"
-      />
+      <img src="imagenes/Imgglobal/LogoHunter.jpg" alt="Logo Hunter" class="logo-header" />
     </header>
 
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-inner">
+        <h2>Domina, Sobrevive, Reclamá</h2>
+        <p>Guías y builds organizadas por niveles — desde civiles hasta cazadores de élite.</p>
+        <div class="hero-ctas">
+          <a class="btn-cta" href="niveles/agente.html">Comenzar como Agente</a>
+          <a class="btn-cta outline" href="niveles/hunter.html">Explorar Hunter</a>
+        </div>
+      </div>
+    </section>
+
     <!-- Menú principal por niveles -->
-<nav>
-  <ul>
-    <li><a href="index.html" class="btn-inicio">Inicio</a></li>
-    <li><a href="niveles/civil.html" class="btn-civil">Civil</a></li>
-    <li><a href="niveles/agente.html" class="btn-agente">Agente</a></li>
-    <li><a href="niveles/renegado.html" class="btn-renegado">Renegado</a></li>
-    <li><a href="niveles/hunter.html" class="btn-hunter">Hunter</a></li>
-  </ul>
-</nav>
+    <nav>
+      <ul>
+        <li><a href="index.html" class="btn-inicio">Inicio</a></li>
+        <li><a href="niveles/civil.html" class="btn-civil">Civil</a></li>
+        <li><a href="niveles/agente.html" class="btn-agente">Agente</a></li>
+        <li><a href="niveles/renegado.html" class="btn-renegado">Renegado</a></li>
+        <li><a href="niveles/hunter.html" class="btn-hunter">Hunter</a></li>
+        <li><a href="niveles/Agentes.html" class="btn-agentes">Agentes Activos</a></li>
+      </ul>
+    </nav>
 
     <!-- Contenido principal -->
     <main>
       <section class="bienvenida">
         <h2>Bienvenido, Agente</h2>
-        <p>
-          Este es el inicio del Proyecto Hunter. Aquí encontrarás guías, builds
-          y herramientas organizadas por niveles temáticos para ayudarte a
-          progresar en The Division 2.
-        </p>
+        <p>Este es el inicio del Proyecto Hunter. Aquí encontrarás guías, builds y herramientas organizadas por niveles temáticos para ayudarte a progresar en The Division 2.</p>
       </section>
 
       <section class="niveles">
-        <div class="card civil">
-          <img
-            src="imagenes/Civil/Civiles.png"
-            alt="Civil"
-            class="icono-card"
-          />
+        <a class="card civil" href="niveles/civil.html">
+          <img src="imagenes/Civil/Civiles.png" alt="Civil" class="icono-card" />
           <div class="contenido-card">
             <h3>Civil</h3>
             <p>Guías básicas, primeros pasos y progresión inicial.</p>
           </div>
-        </div>
+        </a>
 
-        <div class="card agente">
-          <img
-            src="imagenes/Agente/Agente.jpg"
-            alt="Agente"
-            class="icono-card"
-          />
+        <a class="card agente" href="niveles/agente.html">
+          <img src="imagenes/Agente/Agente.jpg" alt="Agente" class="icono-card" />
           <div class="contenido-card">
             <h3>Agente</h3>
             <p>Builds estándar, farmeo eficiente y talentos útiles.</p>
           </div>
-        </div>
+        </a>
 
-        <div class="card renegado">
-          <img
-            src="imagenes/Renegado/Renegado.jpg"
-            alt="Renegado"
-            class="icono-card"
-          />
+        <a class="card renegado" href="niveles/renegado.html">
+          <img src="imagenes/Renegado/Renegado.jpg" alt="Renegado" class="icono-card" />
           <div class="contenido-card">
             <h3>Renegado</h3>
             <p>Builds avanzadas, optimización, PvP y Zona Oscura.</p>
           </div>
-        </div>
+        </a>
 
-        <div class="card hunter">
-          <img
-            src="imagenes/Hunter/Hunter.jpg"
-            alt="Hunter"
-            class="icono-card"
-          />
+        <a class="card hunter" href="niveles/hunter.html">
+          <img src="imagenes/Hunter/Hunter.jpg" alt="Hunter" class="icono-card" />
           <div class="contenido-card">
             <h3>Hunter</h3>
             <p>Contenido élite, secretos, coleccionables y desafíos.</p>
           </div>
-        </div>
+        </a>
       </section>
 
-      <p class="progreso">
-        El sitio crecerá poco a poco según las necesidades de la comunidad
-        LATAM, Gracias.
-      </p>
+      <p class="progreso">El sitio crecerá poco a poco según las necesidades de la comunidad LATAM. Gracias.</p>
     </main>
 
     <!-- Pie de página -->
@@ -112,20 +93,16 @@
 
     <script src="scripts/app.js"></script>
     <script>
-document.addEventListener("DOMContentLoaded", () => {
-    document.querySelectorAll("nav a").forEach(link => {
-        link.addEventListener("click", e => {
+      document.addEventListener("DOMContentLoaded", () => {
+        document.querySelectorAll("nav a").forEach((link) => {
+          link.addEventListener("click", (e) => {
             e.preventDefault();
             const url = link.href;
-
             document.body.classList.add("fade-out");
-
-            setTimeout(() => {
-                window.location.href = url;
-            }, 400);
+            setTimeout(() => { window.location.href = url; }, 400);
+          });
         });
-    });
-});
-</script>
+      });
+    </script>
   </body>
 </html>

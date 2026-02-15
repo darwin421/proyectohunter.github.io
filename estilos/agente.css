@@ -1,27 +1,319 @@
+/* ================================
+   COLORES DEL NIVEL AGENTE
+================================ */
 :root {
-    --color-acento: #ffb300;
-    --color-fondo: #0d0d0d;
-}
-.proximamente {
-    background: rgba(0, 0, 0, 0.7);
-    padding: 40px;
-    border-radius: 10px;
-    text-align: center;
-    margin: 40px auto;
-    max-width: 600px;
-    border: 2px solid var(--color-agente);
-    box-shadow: 0 0 15px var(--color-agente);
+  --agente-acento: var(--color-agente);
+  --card-bg: rgba(255,157,0,0.06);
+  --muted: rgba(242,242,242,0.85);
+  --shadow-soft: 0 8px 22px rgba(0,0,0,0.45);
+  --transition-fast: 180ms cubic-bezier(.2,.9,.2,1);
 }
 
-.proximamente h2 {
-    font-size: 2.5rem;
-    color: var(--color-agente);
-    text-shadow: 0 0 10px var(--color-agente);
-    margin-bottom: 10px;
+/* ================================
+   CONTENEDOR PRINCIPAL
+================================ */
+.page-container {
+  display: flex;
+  width: 100%;
+  min-height: 80vh;
+  background-color: var(--color-fondo);
+}
+body,
+html {
+  overflow-x: hidden;
+}
+/* ================================
+   CONTENEDOR INTERNO DEL CONTENIDO
+================================ */
+.content {
+  flex: 1;
+  padding: 20px;
+  color: var(--color-texto);
+  display: flex;
+  justify-content: center;
 }
 
-.proximamente p {
-    font-size: 1.2rem;
-    color: var(--color-texto);
-    opacity: 0.9;
+.content > * {
+  max-width: 900px; /* Igual que Civil */
+  width: 100%;
 }
+
+/* ================================
+   SIDEBAR (MENÚ LATERAL)
+================================ */
+.sidebar {
+  width: 250px;
+  background: #151515;
+  padding: 18px;
+  border-right: 2px solid rgba(255,157,0,0.06);
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.sidebar h3 { color: var(--agente-acento); margin-bottom: 12px; }
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  margin-bottom: 15px;
+}
+
+.sidebar ul li a {
+  color: var(--color-texto);
+  text-decoration: none;
+  padding: 10px;
+  display: block;
+  border-radius: var(--borde-redondo);
+  transition: 0.3s;
+}
+
+.sidebar ul li a:hover {
+  background-color: var(--color-agente);
+  color: #000;
+  box-shadow: 0 0 10px var(--color-agente);
+}
+
+/* ================================
+   CONTENIDO DINÁMICO
+================================ */
+.content {
+  flex: 1;
+  padding: 20px;
+  color: var(--color-texto);
+}
+
+/* ================================
+   Botón móvil y comportamiento responsive
+================================ */
+.btn-menu-movil {
+  display: none;
+  width: 100%;
+  background-color: var(--color-agente);
+  color: #000;
+  padding: 12px;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+}
+.btn-menu-movil {
+  display:none;
+  background: var(--agente-acento);
+  color:#000;
+  padding:12px;
+  border-radius:8px;
+  width:100%;
+  font-weight:700;
+  border:none;
+}
+@media (max-width:768px) {
+  .btn-menu-movil { display:block; }
+  .sidebar { position:fixed; left:0; top:110px; transform: translateX(-100%); transition: transform .25s ease; z-index:1000; }
+  .sidebar.activo { transform: translateX(0); }
+}
+
+/*TL;DR / Presentación — tarjeta llamativa y legible*/
+.presentacion-agente {
+  background: linear-gradient(180deg, rgba(255,157,0,0.03), rgba(0,0,0,0.15));
+  border: 1px solid rgba(255,157,0,0.08);
+  padding: 18px;
+  border-radius: 10px;
+  box-shadow: var(--shadow-soft);
+}
+.presentacion-agente h2 { color: var(--color-agente); margin-bottom: 12px; }
+.presentacion-agente .tl-dr { background: rgba(0,0,0,0.22); padding: 10px; border-radius: 8px; margin-bottom: 12px; color: var(--muted); font-weight:600; }
+.presentacion-agente .img-presentacion { width:100%; border-radius:8px; margin-bottom:14px; }
+.presentacion-agente ol { margin-left: 1rem; }
+.presentacion-agente .nota { margin-top:12px; font-size:0.95rem; opacity:0.95; }
+/* Glitch SHD — exclusivo para Agente */
+.glitch-agente {
+    position: relative;
+    display: inline-block;
+    color: #ffa200; /* Naranja SHD */
+    font-weight: bold;
+    text-shadow: 0 0 4px rgba(255, 162, 0, 0.6);
+    animation: glitchAgente 1.8s infinite;
+}
+/* Habilidad de Colmillos Negros */
+.habilidad-colmillos {
+    color: #3da5ff; /* Azul Colmillos Negros */
+    font-weight: 700;
+    text-shadow: 0 0 6px rgba(61,165,255,0.45);
+}
+/*habilidcard*/
+.habilidad-card {
+    background: rgba(255,157,0,0.04);
+    border: 1px solid rgba(255,157,0,0.12);
+    padding: 12px 14px;
+    border-radius: 8px;
+    margin-bottom: 14px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.habilidad-card:hover {
+    background: rgba(255,157,0,0.08);
+    transform: translateX(4px);
+}
+/* Habilidad Renegada — glitch suave */
+.habilidad-renegada {
+    color: var(--color-renegado); /* Rojo Renegado */
+    font-weight: 700;
+    text-shadow: 0 0 6px rgba(255, 59, 59, 0.45);
+    animation: glitchRenegado 1.8s infinite;
+}
+/* Glitch lateral estático — Cazador */
+/* Glitch Hunter — Interferencia real sin movimiento */
+.habilidad-cazador {
+    color: var(--color-hunter);
+    font-weight: 700;
+    position: relative;
+
+    /* Aberración cromática lateral */
+    text-shadow:
+        1px 0 rgba(77,184,255,0.6),
+        -1px 0 rgba(0,0,0,0.4),
+        2px 0 rgba(0,0,0,0.2);
+
+    /* Ruido digital suave */
+    background-image: repeating-linear-gradient(
+        to bottom,
+        rgba(255,255,255,0.03) 0px,
+        rgba(255,255,255,0.03) 1px,
+        rgba(0,0,0,0.03) 2px,
+        rgba(0,0,0,0.03) 3px
+    );
+
+    /* Parpadeo irregular */
+    animation: hunterInterference 3.2s infinite;
+}
+/*iconos tamaño*/
+.icon-small {
+    width: 42px;      /* Ajusta a tu gusto */
+    height: auto;     /* Mantiene proporción */
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+@keyframes hunterInterference {
+    0% { opacity: 1; }
+    12% { opacity: 0.85; }
+    18% { opacity: 0.55; }
+    22% { opacity: 0.9; }
+    37% { opacity: 0.7; }
+    41% { opacity: 0.4; }
+    45% { opacity: 0.95; }
+    63% { opacity: 0.8; }
+    78% { opacity: 0.6; }
+    100% { opacity: 1; }
+}
+
+@keyframes glitchRenegado {
+    0% { opacity: 1; }
+    45% { opacity: 0.92; }
+    50% { opacity: 0.75; }
+    55% { opacity: 0.92; }
+    100% { opacity: 1; }
+}
+
+@keyframes glitchAgente {
+    0% { opacity: 1; transform: none; }
+    10% { opacity: 0.85; transform: translateX(-1px); }
+    20% { opacity: 1; transform: translateX(1px); }
+    30% { opacity: 0.9; transform: translateX(-2px); }
+    40% { opacity: 1; transform: none; }
+    50% { opacity: 0.8; transform: translateX(2px); }
+    60% { opacity: 1; transform: none; }
+    70% { opacity: 0.9; transform: translateX(-1px); }
+    80% { opacity: 1; transform: none; }
+    90% { opacity: 0.85; transform: translateX(1px); }
+    100% { opacity: 1; transform: none; }
+}
+/* ================================
+   RESPONSIVE (MODO TELÉFONO)
+================================ */
+@media (max-width: 768px) {
+  /* Mostrar botón móvil */
+  .btn-menu-movil {
+    display: block;
+  }
+
+  /* Sidebar oculto por defecto */
+  .sidebar {
+    position: fixed;
+    top: 120px;
+    left: 0;
+    width: 220px;
+    height: calc(100% - 120px);
+    background-color: #111;
+    transform: translateX(-100%);
+    z-index: 1000;
+  }
+
+  /* Sidebar visible cuando tiene la clase activo */
+  .sidebar.activo {
+    transform: translateX(0);
+  }
+
+  /* Contenido ocupa todo el ancho */
+  .content {
+    padding: 15px;
+  }
+  .content > * {
+    max-width: 100%;
+  }
+}
+
+/* ================================
+   Sidebar — acordeón compacto, foco accesible y .activo
+================================ */
+.category-btn {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  width:100%;
+  background:transparent;
+  border:none;
+  color:var(--muted);
+  padding:10px;
+  cursor:pointer;
+  border-radius:6px;
+  transition: all var(--transition-fast);
+}
+.category-btn:hover,
+.category-btn:focus { background: rgba(255,157,0,0.06); color: var(--agente-acento); outline: none; box-shadow: 0 4px 12px rgba(255,157,0,0.06); }
+/*Microinteracciones: animaciones sutiles para mejorar la experiencia de usuario*/
+.category-btn .arrow { transition: transform var(--transition-fast); }
+.category-btn[aria-expanded="true"] .arrow { transform: rotate(180deg); }
+/**/
+
+.category-list { padding: 6px 0 12px 0; display:none; }
+.category-list.open { display:block; }
+
+.sidebar a.menu-link {
+  display:block;
+  padding:8px 10px;
+  color:var(--muted);
+  text-decoration:none;
+  border-radius:6px;
+  transition: transform var(--transition-fast), background var(--transition-fast);
+}
+.sidebar a.menu-link:hover,
+.sidebar a.menu-link:focus { background: rgba(255,157,0,0.04); color: var(--agente-acento); transform: translateX(4px); }
+
+.menu-link.activo { background: linear-gradient(90deg, rgba(255,157,0,0.06), rgba(0,0,0,0.12)); border-left: 3px solid var(--agente-acento); color: #fff; }
+/*Badges / iconos / microcopy — pequeños detalles que marcan la diferencia*/
+.badge {
+  display:inline-block;
+  font-size:0.75rem;
+  padding:4px 8px;
+  border-radius:999px;
+  background: rgba(255,157,0,0.12);
+  color: var(--agente-acento);
+  margin-left:8px;
+  font-weight:700;
+}
+.icon-small { margin-right:8px; opacity:0.95; }

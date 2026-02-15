@@ -24,7 +24,10 @@
         <img src="../imagenes/Imgglobal/LogoHunter.jpg" class="logo-header" alt="">
     </header>
 
-    <!-- MENÚ -->
+    <!-- BOTÓN MENÚ MÓVIL -->
+    <button class="btn-menu-movil" onclick="toggleMenu()">☰ Menú</button>
+
+    <!-- MENÚ PRINCIPAL -->
     <nav>
         <ul>
             <li><a href="../index.html" class="btn-inicio">Inicio</a></li>
@@ -32,25 +35,155 @@
             <li><a href="agente.html" class="btn-agente">Agente</a></li>
             <li><a href="renegado.html" class="btn-renegado">Renegado</a></li>
             <li><a href="hunter.html" class="btn-hunter activo">Hunter</a></li>
+            <li><a href="Agentes.html" class="btn-agentes">Agentes Activos</a></li>
         </ul>
     </nav>
 
-    <!-- CONTENIDO DE LA PÁGINA -->
-<main>
-    <div class="proximamente">
-        <h2>Error</h2>
-    </div>
-</main>
+    <!-- CONTENIDO -->
+    <main class="page-container">
+
+        <!-- SIDEBAR AVANZADO -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <h3>🎯 Hunter Protocol</h3>
+                
+            </div>
+
+            <div class="category-menu">
+                <!-- CATEGORÍA 1: EQUIPO Y ARMAS -->
+                <div class="menu-category">
+                    <button class="category-btn" onclick="toggleCategory(this)">
+                        <span class="category-icon">⚔️</span>
+                        <span class="category-title">Equipo & Armas</span>
+                        <span class="category-arrow">▼</span>
+                    </button>
+                    <ul class="category-list" style="display: none;">
+                        <li><a href="#" onclick="cargarContenido('../guias/guiashunter/presentacion_hunter.html'); return false;">Presentación Hunter</a></li>
+                        <li class="submenu-item">
+                            <span class="submenu-toggle" onclick="toggleSubmenu(this)">► Equipo</span>
+                            <ul class="submenu" style="display: none;">
+                                <li><a href="#" onclick="cargarContenido('../guias/hunter/equipo_tier_1.html'); return false;">Tier 1</a></li>
+                                <li><a href="#" onclick="cargarContenido('../guias/hunter/equipo_tier_2.html'); return false;">Tier 2</a></li>
+                                <li><a href="#" onclick="cargarContenido('../guias/hunter/equipo_tier_3.html'); return false;">Tier 3</a></li>
+                            </ul>
+                        </li>
+                        <li class="submenu-item">
+                            <span class="submenu-toggle" onclick="toggleSubmenu(this)">► Armas Especiales</span>
+                            <ul class="submenu" style="display: none;">
+                                <li><a href="#" onclick="cargarContenido('../guias/hunter/exoticas.html'); return false;">Exóticas</a></li>
+                                <li><a href="#" onclick="cargarContenido('../guias/hunter/armas_legendarias.html'); return false;">Legendarias</a></li>
+                                <li><a href="#" onclick="cargarContenido('../guias/hunter/armas_unqiue.html'); return false;">Únicas</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- CATEGORÍA 2: HABILIDADES -->
+                <div class="menu-category">
+                    <button class="category-btn" onclick="toggleCategory(this)">
+                        <span class="category-icon">✨</span>
+                        <span class="category-title">Habilidades & Especialidades</span>
+                        <span class="category-arrow">▼</span>
+                    </button>
+                    <ul class="category-list" style="display: none;">
+                        <li class="submenu-item">
+                            <span class="submenu-toggle" onclick="toggleSubmenu(this)">► Especialidades</span>
+                            <ul class="submenu" style="display: none;">
+                                <li><a href="#" onclick="cargarContenido('../guias/hunter/especialidad_francotirador.html'); return false;">Francotirador</a></li>
+                                <li><a href="#" onclick="cargarContenido('../guias/hunter/especialidad_demoledor.html'); return false;">Demoledor</a></li>
+                                <li><a href="#" onclick="cargarContenido('../guias/hunter/especialidad_operario.html'); return false;">Operario</a></li>
+                            </ul>
+                        </li>
+                        <li class="submenu-item">
+                            <span class="submenu-toggle" onclick="toggleSubmenu(this)">► Dispositivos Tácticos</span>
+                            <ul class="submenu" style="display: none;">
+                                <li><a href="#" onclick="cargarContenido('../guias/hunter/modo_dron.html'); return false;">Drones</a></li>
+                                <li><a href="#" onclick="cargarContenido('../guias/hunter/modo_torretas.html'); return false;">Torretas</a></li>
+                                <li><a href="#" onclick="cargarContenido('../guias/hunter/modo_minas.html'); return false;">Minas</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- CATEGORÍA 3: BUILDS -->
+                <div class="menu-category">
+                    <button class="category-btn" onclick="toggleCategory(this)">
+                        <span class="category-icon">🛡️</span>
+                        <span class="category-title">Builds Premium</span>
+                        <span class="category-arrow">▼</span>
+                    </button>
+                    <ul class="category-list" style="display: none;">
+                        <li class="submenu-item">
+                            <span class="submenu-toggle" onclick="toggleSubmenu(this)">► PvE</span>
+                            <ul class="submenu" style="display: none;">
+                                <li><a href="#" onclick="cargarContenido('../guias/hunter/build_daño_puro.html'); return false;">Daño Puro</a></li>
+                                <li><a href="#" onclick="cargarContenido('../guias/hunter/build_control_campo.html'); return false;">Control de Campo</a></li>
+                                <li><a href="#" onclick="cargarContenido('../guias/hunter/build_soporte.html'); return false;">Soporte</a></li>
+                            </ul>
+                        </li>
+                        <li class="submenu-item">
+                            <span class="submenu-toggle" onclick="toggleSubmenu(this)">► PvP</span>
+                            <ul class="submenu" style="display: none;">
+                                <li><a href="#" onclick="cargarContenido('../guias/hunter/build_pvp_agresivo.html'); return false;">Agresivo</a></li>
+                                <li><a href="#" onclick="cargarContenido('../guias/hunter/build_pvp_defensivo.html'); return false;">Defensivo</a></li>
+                                <li><a href="#" onclick="cargarContenido('../guias/hunter/build_pvp_hibrido.html'); return false;">Híbrido</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- CATEGORÍA 4: CONTENIDO ENDGAME -->
+                <div class="menu-category">
+                    <button class="category-btn" onclick="toggleCategory(this)">
+                        <span class="category-icon">👑</span>
+                        <span class="category-title">Contenido EndGame</span>
+                        <span class="category-arrow">▼</span>
+                    </button>
+                    <ul class="category-list" style="display: none;">
+                        <li><a href="#" onclick="cargarContenido('../guias/hunter/raid_guide.html'); return false;">Guía de Raid</a></li>
+                        <li><a href="#" onclick="cargarContenido('../guias/hunter/incursiones.html'); return false;">Incursiones de Élite</a></li>
+                        <li><a href="#" onclick="cargarContenido('../guias/hunter/zona_oscura.html'); return false;">Zona Oscura (DZ)</a></li>
+                        <li><a href="#" onclick="cargarContenido('../guias/hunter/contenido_seasonal.html'); return false;">Contenido Seasonal</a></li>
+                    </ul>
+                </div>
+
+                <!-- CATEGORÍA 5: REFERENCIAS -->
+                <div class="menu-category">
+                    <button class="category-btn" onclick="toggleCategory(this)">
+                        <span class="category-icon">📚</span>
+                        <span class="category-title">Referencias & Tablas</span>
+                        <span class="category-arrow">▼</span>
+                    </button>
+                    <ul class="category-list" style="display: none;">
+                        <li><a href="#" onclick="cargarContenido('../guias/hunter/tabla_atributos.html'); return false;">Tabla de Atributos</a></li>
+                        <li><a href="#" onclick="cargarContenido('../guias/hunter/tabla_modificadores.html'); return false;">Modificadores</a></li>
+                        <li><a href="#" onclick="cargarContenido('../guias/hunter/diccionario_divisiones.html'); return false;">Diccionario Division</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="sidebar-footer">
+                <p class="version-info">▂ v2.1 Hunter Edition</p>
+            </div>
+        </div>
+
+        <!-- CONTENIDO DINÁMICO -->
+        <div class="content" id="contenido"></div>
+
+    </main>
 
     <!-- FOOTER -->
     <footer>
         Proyecto Hunter © 2026 - Comunidad LATAM de The Division 2
     </footer>
 
-    <!-- SCRIPT DE TRANSICIÓN -->
+    <!-- SCRIPT DEL NIVEL -->
+    <script src="../scripts/hunter.js"></script>
+
+    <!-- TRANSICIÓN -->
     <script>
-        document.querySelectorAll("nav a").forEach(link => {
-            link.addEventListener("click", function(e) {
+        document.querySelectorAll("nav a").forEach((link) => {
+            link.addEventListener("click", function (e) {
                 e.preventDefault();
                 const url = this.href;
 

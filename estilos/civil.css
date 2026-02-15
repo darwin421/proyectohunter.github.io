@@ -140,8 +140,37 @@
 .titulo-amarillo {
     color: #ffd84d;
 }
+/* Rareza de armas */
+.rareza-lista .rareza {
+    font-weight: bold;
+}
 
+.rareza.clasico { color: #bfbfbf; }
+.rareza.estandar { color: #4aa3ff; }
+.rareza.especializado { color: #3cff00; }
+.rareza.superior { color: #ff9d00; }
+.rareza.suprema { color: #ff2b2b; }
 
+/*amenazas*/
+.amenaza {
+    font-weight: bold;
+}
+
+.amenaza.rojo {
+    color: #ff3b3b; /* rojo estándar */
+}
+
+.amenaza.morado {
+    color: #b347ff; /* morado veterano */
+}
+
+.amenaza.dorado {
+    color: #ffcc33; /* dorado élite */
+}
+
+.amenaza.dorado-nombre {
+    color: #ffb300; /* dorado más intenso para jefes */
+}
 
 @keyframes glitch {
   0% {

@@ -24,7 +24,10 @@
         <img src="../imagenes/Imgglobal/LogoHunter.jpg" class="logo-header" alt="">
     </header>
 
-    <!-- MENÚ -->
+    <!-- BOTÓN MENÚ MÓVIL -->
+    <button class="btn-menu-movil" onclick="toggleMenu()">☰ Menú</button>
+
+    <!-- MENÚ PRINCIPAL -->
     <nav>
         <ul>
             <li><a href="../index.html" class="btn-inicio">Inicio</a></li>
@@ -32,25 +35,70 @@
             <li><a href="agente.html" class="btn-agente">Agente</a></li>
             <li><a href="renegado.html" class="btn-renegado activo">Renegado</a></li>
             <li><a href="hunter.html" class="btn-hunter">Hunter</a></li>
+            <li><a href="Agentes.html" class="btn-agentes">Agentes Activos</a></li>
         </ul>
     </nav>
 
-    <!-- CONTENIDO DE LA PÁGINA -->
- <main>
-    <div class="proximamente">
-        <h2>Protocolo Restringido</h2>
-    </div>
-</main>
+    <!-- CONTENIDO -->
+    <main class="page-container">
+
+        <!-- SIDEBAR -->
+        <div class="sidebar">
+            <h3>Renegado</h3>
+            <ul>
+                <li>
+                    <a href="#"
+                       onclick="
+                           cargarContenido('../guias/guiasrenegado/presentacionrenegado.html');
+                           return false;
+                       ">
+                       Presentación
+                    </a>
+                </li>
+                <li>
+                    <a href="#" onclick="
+                           cargarContenido('../guias/guiasrenegado/equipo_renegado.html');
+                           return false;
+                       ">
+                       Equipo Renegado
+                    </a>
+                </li>
+                <li>
+                    <a href="#" onclick="
+                           cargarContenido('../guias/guiasrenegado/habilidades_renegado.html');
+                           return false;
+                       ">
+                       Habilidades Corrompidas
+                    </a>
+                </li>
+                <li>
+                    <a href="#" onclick="
+                           cargarContenido('../guias/renegado/armas_renegado.html');
+                           return false;
+                       ">
+                       Armamento Oscuro
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- CONTENIDO DINÁMICO -->
+        <div class="content" id="contenido"></div>
+
+    </main>
 
     <!-- FOOTER -->
     <footer>
         Proyecto Hunter © 2026 - Comunidad LATAM de The Division 2
     </footer>
 
-    <!-- SCRIPT DE TRANSICIÓN -->
+    <!-- SCRIPT DEL NIVEL -->
+    <script src="../scripts/renegado.js"></script>
+
+    <!-- TRANSICIÓN -->
     <script>
-        document.querySelectorAll("nav a").forEach(link => {
-            link.addEventListener("click", function(e) {
+        document.querySelectorAll("nav a").forEach((link) => {
+            link.addEventListener("click", function (e) {
                 e.preventDefault();
                 const url = this.href;
 

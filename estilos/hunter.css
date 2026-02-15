@@ -1,27 +1,387 @@
+/* ================================
+   COLORES DEL NIVEL HUNTER
+================================ */
 :root {
-    --color-acento: #0099ff;
-    --color-fondo: #000814;
+  --color-acento: var(--color-hunter);
+  --color-fondo: #000814;
 }
+
+/* ================================
+   CONTENEDOR PRINCIPAL
+================================ */
+.page-container {
+  display: flex;
+  width: 100%;
+  min-height: 80vh;
+  background: linear-gradient(135deg, #000814 0%, #001428 50%, #000814 100%);
+}
+
+body, html {
+  overflow-x: hidden;
+}
+
+/* ================================
+   CONTENEDOR INTERNO DEL CONTENIDO
+================================ */
+.content {
+  flex: 1;
+  padding: 20px;
+  color: var(--color-texto);
+  display: flex;
+  justify-content: center;
+}
+
+.content > * {
+  max-width: 900px;
+  width: 100%;
+}
+
+/* ================================
+   SIDEBAR PREMIUM (MENÚ LATERAL AVANZADO)
+================================ */
+.sidebar {
+  width: 280px;
+  background: linear-gradient(180deg, rgba(0, 153, 255, 0.05) 0%, rgba(0, 0, 0, 0.6) 100%);
+  padding: 0;
+  border-right: 2px solid var(--color-hunter);
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  box-shadow: -5px 0 30px rgba(0, 153, 255, 0.15);
+  overflow-y: auto;
+  max-height: 100vh;
+}
+
+/* HEADER DEL SIDEBAR */
+.sidebar-header {
+  padding: 20px;
+  border-bottom: 2px solid var(--color-hunter);
+  position: relative;
+  background: rgba(0, 153, 255, 0.1);
+}
+
+.sidebar-header h3 {
+  color: var(--color-hunter);
+  margin: 0 0 10px 0;
+  text-shadow: 0 0 15px var(--color-hunter), 0 0 30px var(--color-hunter);
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.status-indicator {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 12px;
+  height: 12px;
+  background: var(--color-hunter);
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--color-hunter);
+  animation: pulse-hunter 2s infinite;
+}
+
+@keyframes pulse-hunter {
+  0%, 100% {
+    box-shadow: 0 0 10px var(--color-hunter);
+  }
+  50% {
+    box-shadow: 0 0 20px var(--color-hunter);
+  }
+}
+
+/* CATEGORÍAS MENÚ */
+.category-menu {
+  flex: 1;
+  padding: 10px 0;
+  overflow-y: auto;
+}
+
+.menu-category {
+  margin-bottom: 5px;
+  border-bottom: 1px solid rgba(0, 153, 255, 0.1);
+}
+
+.category-btn {
+  width: 100%;
+  background: transparent;
+  border: none;
+  color: var(--color-texto);
+  padding: 15px 20px;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: 0.3s ease;
+  position: relative;
+}
+
+.category-btn::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 3px;
+  background: var(--color-hunter);
+  transform: scaleY(0);
+  transition: transform 0.3s ease;
+}
+
+.category-btn:hover {
+  background: rgba(0, 153, 255, 0.15);
+  color: var(--color-hunter);
+  text-shadow: 0 0 5px var(--color-hunter);
+}
+
+.category-btn:hover::before {
+  transform: scaleY(1);
+}
+
+.category-icon {
+  font-size: 1.2rem;
+}
+
+.category-title {
+  flex: 1;
+}
+
+.category-arrow {
+  font-size: 0.8rem;
+  transition: transform 0.3s ease;
+}
+
+.category-btn[data-open="true"] .category-arrow {
+  transform: rotate(180deg);
+}
+
+/* LISTA DE CATEGORÍA */
+.category-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.category-list > li {
+  margin: 0;
+}
+
+.category-list > li > a {
+  display: block;
+  padding: 12px 20px 12px 50px;
+  color: var(--color-texto);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: 0.2s ease;
+  border-left: 2px solid transparent;
+}
+
+.category-list > li > a:hover {
+  background: rgba(0, 153, 255, 0.2);
+  color: var(--color-hunter);
+  border-left: 2px solid var(--color-hunter);
+  transform: translateX(5px);
+}
+
+/* SUBMENÚ */
+.submenu-item {
+  position: relative;
+}
+
+.submenu-toggle {
+  display: block;
+  padding: 12px 20px 12px 50px;
+  color: var(--color-texto);
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: 0.2s ease;
+  border-left: 2px solid transparent;
+  user-select: none;
+}
+
+.submenu-toggle:hover {
+  background: rgba(0, 153, 255, 0.15);
+  color: var(--color-hunter);
+  border-left: 2px solid var(--color-hunter);
+}
+
+.submenu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background: rgba(0, 0, 0, 0.5);
+  border-left: 2px solid rgba(0, 153, 255, 0.3);
+}
+
+.submenu li {
+  margin: 0;
+}
+
+.submenu li a {
+  display: block;
+  padding: 10px 20px 10px 70px;
+  color: rgba(242, 242, 242, 0.8);
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: 0.2s ease;
+  border-left: 2px solid transparent;
+}
+
+.submenu li a:hover {
+  background: rgba(0, 153, 255, 0.25);
+  color: var(--color-hunter);
+  border-left: 2px solid var(--color-hunter);
+  padding-left: 75px;
+}
+
+/* FOOTER DEL SIDEBAR */
+.sidebar-footer {
+  padding: 15px 20px;
+  border-top: 1px solid rgba(0, 153, 255, 0.2);
+  background: rgba(0, 153, 255, 0.05);
+  margin-top: auto;
+}
+
+.version-info {
+  margin: 0;
+  color: rgba(0, 153, 255, 0.6);
+  font-size: 0.8rem;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+/* ================================
+   BOTÓN MENÚ MÓVIL
+================================ */
+.btn-menu-movil {
+  display: none;
+  width: 100%;
+  background: linear-gradient(90deg, var(--color-hunter), #0066cc);
+  color: #fff;
+  padding: 12px;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-weight: bold;
+}
+
+.btn-menu-movil:hover {
+  background: linear-gradient(90deg, #00aaff, #0099ff);
+}
+
+/*presentacion hunter*/
+    .presentacion-hunter {
+        background: rgba(0, 153, 255, 0.05);
+        padding: 20px;
+        border-radius: 8px;
+        border-left: 4px solid var(--color-hunter);
+    }
+    
+    .presentacion-hunter h2 {
+        color: var(--color-hunter);
+        text-shadow: 0 0 15px var(--color-hunter);
+        margin-bottom: 15px;
+    }
+    
+    .presentacion-hunter h3 {
+        color: var(--color-hunter);
+        margin-top: 20px;
+    }
+    
+    .presentacion-hunter p {
+        line-height: 1.6;
+        margin-bottom: 15px;
+    }
+    
+    .img-presentacion {
+        width: 100%;
+        border-radius: 8px;
+        margin-bottom: 20px;
+    }
+
+/* ================================
+   RESPONSIVE (MODO TELÉFONO)
+================================ */
+@media (max-width: 768px) {
+  /* Mostrar botón móvil */
+  .btn-menu-movil {
+    display: block;
+  }
+
+  /* Sidebar oculto por defecto */
+  .sidebar {
+    position: fixed;
+    top: 120px;
+    left: 0;
+    width: 260px;
+    height: calc(100% - 120px);
+    background: linear-gradient(180deg, rgba(0, 153, 255, 0.1) 0%, rgba(0, 0, 0, 0.8) 100%);
+    transform: translateX(-100%);
+    z-index: 1000;
+    box-shadow: 5px 0 25px rgba(0, 153, 255, 0.25);
+    border-radius: 0;
+  }
+
+  /* Sidebar visible cuando tiene la clase activo */
+  .sidebar.activo {
+    transform: translateX(0);
+  }
+
+  /* Contenido ocupa todo el ancho */
+  .page-container {
+    flex-direction: column;
+  }
+
+  .content {
+    padding: 15px;
+  }
+
+  .content > * {
+    max-width: 100%;
+  }
+}
+
+/* Estilo para el mensaje de bienvenida */
 .proximamente {
-    background: rgba(0, 0, 0, 0.7);
-    padding: 40px;
-    border-radius: 10px;
-    text-align: center;
-    margin: 40px auto;
-    max-width: 600px;
-    border: 2px solid var(--color-hunter);
-    box-shadow: 0 0 15px var(--color-hunter);
+  background: rgba(0, 153, 255, 0.1);
+  border: 2px solid var(--color-hunter);
+  padding: 40px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0, 153, 255, 0.2);
 }
 
 .proximamente h2 {
-    font-size: 2.5rem;
-    color: var(--color-hunter);
-    text-shadow: 0 0 10px var(--color-hunter);
-    margin-bottom: 10px;
+  color: var(--color-hunter);
+  text-shadow: 0 0 15px var(--color-hunter);
+  font-size: 2.5rem;
+  margin-bottom: 10px;
 }
 
 .proximamente p {
-    font-size: 1.2rem;
-    color: var(--color-texto);
-    opacity: 0.9;
+  color: var(--color-texto);
+  font-size: 1.1rem;
+}
+
+/* Scrollbar personalizada */
+.sidebar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+  background: rgba(0, 153, 255, 0.05);
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background: rgba(0, 153, 255, 0.3);
+  border-radius: 4px;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 153, 255, 0.6);
 }

@@ -5,10 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Agente - Proyecto Hunter</title>
 
-    <!-- Estilos globales -->
     <link rel="stylesheet" href="../estilos/global.css" />
-
-    <!-- Estilos propios de la página -->
     <link rel="stylesheet" href="../estilos/agente.css" />
 </head>
 
@@ -24,7 +21,10 @@
         <img src="../imagenes/Imgglobal/LogoHunter.jpg" class="logo-header" alt="">
     </header>
 
-    <!-- MENÚ -->
+    <!-- BOTÓN MENÚ MÓVIL -->
+    <button class="btn-menu-movil" onclick="toggleMenu()">☰ Menú</button>
+
+    <!-- MENÚ PRINCIPAL -->
     <nav>
         <ul>
             <li><a href="../index.html" class="btn-inicio">Inicio</a></li>
@@ -32,25 +32,55 @@
             <li><a href="agente.html" class="btn-agente activo">Agente</a></li>
             <li><a href="renegado.html" class="btn-renegado">Renegado</a></li>
             <li><a href="hunter.html" class="btn-hunter">Hunter</a></li>
+            <li><a href="Agentes.html" class="btn-agentes">Agentes Activos</a></li>
         </ul>
     </nav>
 
-    <!-- CONTENIDO DE LA PÁGINA -->
-<main>
-    <div class="proximamente">
-        <h2>Acceso Restringido</h2>
-        
-    </div>
-</main>
+    <!-- CONTENIDO -->
+    <main class="page-container">
+
+        <!-- SIDEBAR -->
+        <div class="sidebar">
+            <h3>Agente SHD</h3>
+            <ul>
+                <li>
+                    <a href="#"
+                       onclick="
+                           cargarContenido('../guias/guiasagente/presentacionagente.html');
+                           return false;
+                       ">
+                       Presentación
+                    </a>
+                </li>
+                                <li>
+                    <a href="#"
+                       onclick="
+                           cargarContenido('../guias/guiasagente/habilidades.html');
+                           return false;
+                       ">
+                       Habilidades
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- CONTENIDO DINÁMICO -->
+        <div class="content" id="contenido"></div>
+
+    </main>
+
+    <!-- SCRIPT DEL NIVEL -->
+    <script src="../scripts/agente.js"></script>
+
     <!-- FOOTER -->
     <footer>
         Proyecto Hunter © 2026 - Comunidad LATAM de The Division 2
     </footer>
 
-    <!-- SCRIPT DE TRANSICIÓN -->
+    <!-- TRANSICIÓN -->
     <script>
-        document.querySelectorAll("nav a").forEach(link => {
-            link.addEventListener("click", function(e) {
+        document.querySelectorAll("nav a").forEach((link) => {
+            link.addEventListener("click", function (e) {
                 e.preventDefault();
                 const url = this.href;
 
@@ -65,3 +95,4 @@
 
 </body>
 </html>
+
