@@ -69,7 +69,7 @@
     </script>
     <script>
 // Cargar el contenido dinámico
-fetch("/guias/AgentesActivos/agentesActivos.html")
+fetch("../guias/AgentesActivos/agentesActivos.html")
   .then((response) => response.text())
   .then((html) => {
     const contenedor = document.getElementById("contenido-dinamico");
