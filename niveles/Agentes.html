@@ -68,25 +68,29 @@
       });
     </script>
     <script>
-      // Cargar el contenido dinámico
-      fetch("../guias/AgentesActivos/agentesActivos.html")
-        .then((response) => response.text())
-        .then((html) => {
-          const contenedor = document.getElementById("contenido-dinamico");
-          contenedor.innerHTML = html;
+// Cargar el contenido dinámico
+fetch("/guias/AgentesActivos/agentesActivos.html")
+  .then((response) => response.text())
+  .then((html) => {
+    const contenedor = document.getElementById("contenido-dinamico");
+    contenedor.innerHTML = html;
 
-          // Buscar scripts dentro del HTML cargado
-          const newScript = document.createElement("script");
-          newScript.src = oldScript.src.startsWith("http")
-            ? oldScript.src
-            : "/" + oldScript.src.replace(/^(\.\/|\/)/, "");
-          document.body.appendChild(newScript);
-        })
-        .catch((error) => {
-          document.getElementById("contenido-dinamico").innerHTML =
-            "<p>Error al cargar el contenido.</p>";
-          console.error("Error cargando agentesactivos.html:", error);
-        });
+    // Buscar el script dentro del HTML cargado
+    const oldScript = contenedor.querySelector("script");
+
+    if (oldScript) {
+      const newScript = document.createElement("script");
+      newScript.src = oldScript.src.startsWith("http")
+        ? oldScript.src
+        : "/" + oldScript.src.replace(/^(\.\/|\/)/, "");
+      document.body.appendChild(newScript);
+    }
+  })
+  .catch((error) => {
+    document.getElementById("contenido-dinamico").innerHTML =
+      "<p>Error al cargar el contenido.</p>";
+    console.error("Error cargando agentesactivos.html:", error);
+  });
     </script>
   </body>
 </html>
