@@ -76,13 +76,11 @@
           contenedor.innerHTML = html;
 
           // Buscar scripts dentro del HTML cargado
-          const scripts = contenedor.querySelectorAll("script");
-
-          scripts.forEach((oldScript) => {
-            const newScript = document.createElement("script");
-            newScript.src = oldScript.src;
-            document.body.appendChild(newScript);
-          });
+          const newScript = document.createElement("script");
+          newScript.src = oldScript.src.startsWith("http")
+            ? oldScript.src
+            : "/" + oldScript.src.replace(/^(\.\/|\/)/, "");
+          document.body.appendChild(newScript);
         })
         .catch((error) => {
           document.getElementById("contenido-dinamico").innerHTML =
