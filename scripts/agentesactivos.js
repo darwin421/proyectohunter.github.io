@@ -5,18 +5,23 @@ fetch("../data/agente.json")
 
     agentes.forEach((agente) => {
       const tarjeta = document.createElement("div");
-      tarjeta.classList.add("tarjeta-agente");
+      tarjeta.classList.add("contenedor-agente");
 
       tarjeta.innerHTML = `
-  <img src="${agente.imagen}" alt="${agente.nombre}" class="img-agente">
+        <img src="${agente.imagen}" alt="${agente.nombre}" class="img-agente">
 
-  <h3>${agente.nombre}</h3>
+        <div class="info-agente">
+          <h3>${agente.nombre}</h3>
 
-  <p><strong>Especialidad:</strong> ${agente.especialidad}</p>
-  <p><strong>Rol:</strong> ${agente.rol}</p>
+          <p><strong>Estado:</strong> ${agente.estado}</p>
+          <p><strong>Especialidad:</strong> ${agente.especialidad}</p>
+          <p><strong>Rol en combate:</strong> ${agente.rol}</p>
+          <p><strong>Plataforma:</strong> ${agente.plataforma}</p>
+          <p><strong>ID:</strong> ${agente.id}</p>
 
-  <p class="mensaje">${agente.mensaje}</p>
-`;
+          <p class="mensaje">${agente.mensaje}</p>
+        </div>
+      `;
 
       contenedor.appendChild(tarjeta);
     });
