@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="es">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Agentes Activos - Proyecto Hunter</title>
@@ -10,60 +10,85 @@
 
     <!-- Estilos propios de la página -->
     <link rel="stylesheet" href="../estilos/agentes.css" />
-</head>
+  </head>
 
-<body>
-
+  <body>
     <!-- HEADER -->
     <header class="header-con-logos">
-        <img src="../imagenes/Imgglobal/LogoSHD.jpg" class="logo-header" alt="">
-        <div class="titulo-header">
-            <h1>Agentes Activos</h1>
-            <p>Registro operativo de la comunidad</p>
-        </div>
-        <img src="../imagenes/Imgglobal/LogoHunter.jpg" class="logo-header" alt="">
+      <img src="../imagenes/Imgglobal/LogoSHD.jpg" class="logo-header" alt="" />
+      <div class="titulo-header">
+        <h1>Agentes Activos</h1>
+        <p>Registro operativo de la comunidad</p>
+      </div>
+      <img
+        src="../imagenes/Imgglobal/LogoHunter.jpg"
+        class="logo-header"
+        alt=""
+      />
     </header>
 
     <!-- MENÚ -->
     <nav>
-        <ul>
-            <li><a href="../index.html" class="btn-inicio">Inicio</a></li>
-            <li><a href="civil.html" class="btn-civil">Civil</a></li>
-            <li><a href="agente.html" class="btn-agente">Agente</a></li>
-            <li><a href="renegado.html" class="btn-renegado">Renegado</a></li>
-            <li><a href="hunter.html" class="btn-hunter">Hunter</a></li>
-            <li><a href="Agentes.html" class="btn-agentes activo">Agentes Activos</a></li>
-        </ul>
+      <ul>
+        <li><a href="../index.html" class="btn-inicio">Inicio</a></li>
+        <li><a href="civil.html" class="btn-civil">Civil</a></li>
+        <li><a href="agente.html" class="btn-agente">Agente</a></li>
+        <li><a href="renegado.html" class="btn-renegado">Renegado</a></li>
+        <li><a href="hunter.html" class="btn-hunter">Hunter</a></li>
+        <li>
+          <a href="Agentes.html" class="btn-agentes activo">Agentes Activos</a>
+        </li>
+        <li>
+          <a href="info-comunidad.html" class="btn-info"
+            >Info de la comunidad</a
+          >
+        </li>
+      </ul>
     </nav>
 
     <!-- CONTENIDO DE LA PÁGINA -->
-<main>
-    <div class="proximamente">
-        <h2>Acceso Restringido</h2>
-        <p>ISAC requiere autorización adicional para mostrar el registro de agentes.</p>
-    </div>
-</main>
+    <main id="contenido-dinamico"></main>
 
     <!-- FOOTER -->
-    <footer>
-        Proyecto Hunter © 2026 - Comunidad LATAM de The Division 2
-    </footer>
+    <footer>Proyecto Hunter © 2026 - Comunidad LATAM de The Division 2</footer>
 
     <!-- SCRIPT DE TRANSICIÓN -->
     <script>
-        document.querySelectorAll("nav a").forEach(link => {
-            link.addEventListener("click", function(e) {
-                e.preventDefault();
-                const url = this.href;
+      document.querySelectorAll("nav a").forEach((link) => {
+        link.addEventListener("click", function (e) {
+          e.preventDefault();
+          const url = this.href;
 
-                document.body.classList.add("fade-out");
+          document.body.classList.add("fade-out");
 
-                setTimeout(() => {
-                    window.location.href = url;
-                }, 400);
-            });
+          setTimeout(() => {
+            window.location.href = url;
+          }, 400);
+        });
+      });
+    </script>
+    <script>
+      // Cargar el contenido dinámico
+      fetch("../guias/AgentesActivos/agentesActivos.html")
+        .then((response) => response.text())
+        .then((html) => {
+          const contenedor = document.getElementById("contenido-dinamico");
+          contenedor.innerHTML = html;
+
+          // Buscar scripts dentro del HTML cargado
+          const scripts = contenedor.querySelectorAll("script");
+
+          scripts.forEach((oldScript) => {
+            const newScript = document.createElement("script");
+            newScript.src = oldScript.src;
+            document.body.appendChild(newScript);
+          });
+        })
+        .catch((error) => {
+          document.getElementById("contenido-dinamico").innerHTML =
+            "<p>Error al cargar el contenido.</p>";
+          console.error("Error cargando agentesactivos.html:", error);
         });
     </script>
-
-</body>
+  </body>
 </html>

@@ -15,8 +15,8 @@
   --color-renegado: #ff1a1a;
   --color-hunter: #0099ff;
   --color-agentes: #00eaff; /* Cian ISAC */
+  --color-info:#b347ff; /* Morado para info comunidad */
 }
-
 /* ESTILOS GENERALES */
 body {
   margin: 0;
@@ -129,6 +129,10 @@ nav a:hover {
   background-color: var(--color-agentes);
   color: #000;
 }
+.btn-info.activo {
+  background-color: var(--color-info);
+  color: #fff;
+}
 
 
 /* COLORES DEL MENÚ POR SECCIÓN */
@@ -160,6 +164,9 @@ nav a:hover {
   background-color: var(--color-agentes);
   color: #000;
 }
+.btn-info:hover {
+  background-color: var(--color-info);
+  color: #fff;}
 /* CONTENIDO */
 main {
   flex: 1; /* ocupa todo el espacio disponible */
@@ -384,3 +391,4 @@ footer {
 @media (max-width:480px) {
   .card { width:100%; }
 }
+
