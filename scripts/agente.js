@@ -36,3 +36,28 @@ document.addEventListener("DOMContentLoaded", () => {
 function toggleMenu() {
     document.querySelector(".sidebar").classList.toggle("activo");
 }
+// Menu de especializaciones
+function toggleSubmenu(id, elemento) {
+    const submenu = document.getElementById(id);
+    submenu.classList.toggle("oculto");
+
+    // Cambiar flecha
+    const flecha = elemento.querySelector(".flecha");
+    if (submenu.classList.contains("oculto")) {
+        flecha.textContent = "▶";
+    } else {
+        flecha.textContent = "▼";
+    }
+}
+//Funcion para cerrar el submenu al hacer click en una opcion
+function cerrarSubmenu(id) {
+    const submenu = document.getElementById(id);
+    submenu.classList.add("oculto");
+
+    // Cerrar menú móvil si está abierto
+    document.querySelector(".sidebar").classList.remove("activo");
+
+    // Restaurar flecha
+    const btn = document.querySelector(".submenu-btn a .flecha");
+    if (btn) btn.textContent = "▶";
+}

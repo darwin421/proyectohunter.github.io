@@ -1,24 +1,27 @@
 <!doctype html>
 <html lang="es">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Agente - Proyecto Hunter</title>
 
     <link rel="stylesheet" href="../estilos/global.css" />
     <link rel="stylesheet" href="../estilos/agente.css" />
-</head>
+  </head>
 
-<body>
-
+  <body>
     <!-- HEADER -->
     <header class="header-con-logos">
-        <img src="../imagenes/Agente/Agente.jpg" class="logo-header" alt="">
-        <div class="titulo-header">
-            <h1>Agente</h1>
-            <p>Guías y herramientas en español para The Division 2</p>
-        </div>
-        <img src="../imagenes/Imgglobal/LogoHunter.jpg" class="logo-header" alt="">
+      <img src="../imagenes/Agente/Agente.jpg" class="logo-header" alt="" />
+      <div class="titulo-header">
+        <h1>Agente</h1>
+        <p>Guías y herramientas en español para The Division 2</p>
+      </div>
+      <img
+        src="../imagenes/Imgglobal/LogoHunter.jpg"
+        class="logo-header"
+        alt=""
+      />
     </header>
 
     <!-- BOTÓN MENÚ MÓVIL -->
@@ -26,74 +29,143 @@
 
     <!-- MENÚ PRINCIPAL -->
     <nav>
-        <ul>
-            <li><a href="../index.html" class="btn-inicio">Inicio</a></li>
-            <li><a href="civil.html" class="btn-civil">Civil</a></li>
-            <li><a href="agente.html" class="btn-agente activo">Agente</a></li>
-            <li><a href="renegado.html" class="btn-renegado">Renegado</a></li>
-            <li><a href="hunter.html" class="btn-hunter">Hunter</a></li>
-            <li><a href="Agentes.html" class="btn-agentes">Agentes Activos</a></li>
-            <li><a href="info-comunidad.html" class="btn-info">Info de la comunidad</a></li>
-        </ul>
+      <ul>
+        <li><a href="../index.html" class="btn-inicio">Inicio</a></li>
+        <li><a href="civil.html" class="btn-civil">Civil</a></li>
+        <li><a href="agente.html" class="btn-agente activo">Agente</a></li>
+        <li><a href="renegado.html" class="btn-renegado">Renegado</a></li>
+        <li><a href="hunter.html" class="btn-hunter">Hunter</a></li>
+        <li><a href="Agentes.html" class="btn-agentes">Agentes Activos</a></li>
+        <li>
+          <a href="info-comunidad.html" class="btn-info"
+            >Info de la comunidad</a
+          >
+        </li>
+      </ul>
     </nav>
 
     <!-- CONTENIDO -->
     <main class="page-container">
+      <!-- SIDEBAR -->
+      <div class="sidebar">
+        <h3>Agente SHD</h3>
+        <ul>
+          <li>
+            <a
+              href="#"
+              onclick="
+                cargarContenido('../guias/guiasagente/presentacionagente.html');
+                return false;
+              "
+            >
+              Presentación
+            </a>
+          </li>
+          <li>
+            <a
+              href="#"
+              onclick="
+                cargarContenido('../guias/guiasagente/habilidades.html');
+                return false;
+              "
+            >
+              Habilidades
+            </a>
+          </li>
+<li class="submenu-btn">
+  <a href="#" onclick="toggleSubmenu('esp-submenu', this); return false;">
+    <span class="flecha">▶</span> Especializaciones
+  </a>
 
-        <!-- SIDEBAR -->
-        <div class="sidebar">
-            <h3>Agente SHD</h3>
-            <ul>
-                <li>
-                    <a href="#"
-                       onclick="
-                           cargarContenido('../guias/guiasagente/presentacionagente.html');
-                           return false;
-                       ">
-                       Presentación
-                    </a>
-                </li>
-                                <li>
-                    <a href="#"
-                       onclick="
-                           cargarContenido('../guias/guiasagente/habilidades.html');
-                           return false;
-                       ">
-                       Habilidades
-                    </a>
-                </li>
-            </ul>
-        </div>
+  <ul id="esp-submenu" class="submenu oculto">
+    <li>
+      <a href="#"
+         onclick="cargarContenido('../guias/guiasagente/especializaciones/presentacion.html'); cerrarSubmenu('esp-submenu'); return false;">
+        Presentación
+      </a>
+    </li>
 
-        <!-- CONTENIDO DINÁMICO -->
-        <div class="content" id="contenido"></div>
+    <li>
+      <a href="#"
+         onclick="cargarContenido('../guias/guiasagente/especializaciones/artillero.html'); cerrarSubmenu('esp-submenu'); return false;">
+        Artillero
+      </a>
+    </li>
 
+    <li>
+      <a href="#"
+         onclick="cargarContenido('../guias/guiasagente/especializaciones/francotirador.html'); cerrarSubmenu('esp-submenu'); return false;">
+        Francotirador
+      </a>
+    </li>
+
+    <li>
+      <a href="#"
+         onclick="cargarContenido('../guias/guiasagente/especializaciones/expdemoliciones.html'); cerrarSubmenu('esp-submenu'); return false;">
+        Experto en Demoliciones
+      </a>
+    </li>
+
+    <li>
+      <a href="#"
+         onclick="cargarContenido('../guias/guiasagente/especializaciones/superviviente.html'); cerrarSubmenu('esp-submenu'); return false;">
+        Superviviente
+      </a>
+    </li>
+
+    <li>
+      <a href="#"
+         onclick="cargarContenido('../guias/guiasagente/especializaciones/tecnico.html'); cerrarSubmenu('esp-submenu'); return false;">
+        Técnico
+      </a>
+    </li>
+
+    <li>
+      <a href="#"
+         onclick="cargarContenido('../guias/guiasagente/especializaciones/ignifugo.html'); cerrarSubmenu('esp-submenu'); return false;">
+        Ignífugo
+      </a>
+    </li>
+  </ul>
+</li>
+          <li>
+            <a
+              href="#"
+              onclick="
+                cargarContenido('../guias/guiasagente/mapa.html');
+                return false;
+              "
+            >
+              Mapa/Navegación
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- CONTENIDO DINÁMICO -->
+      <div class="content" id="contenido"></div>
     </main>
 
     <!-- SCRIPT DEL NIVEL -->
     <script src="../scripts/agente.js"></script>
 
     <!-- FOOTER -->
-    <footer>
-        Proyecto Hunter © 2026 - Comunidad LATAM de The Division 2
-    </footer>
+    <footer>Proyecto Hunter © 2026 - Comunidad LATAM de The Division 2</footer>
 
     <!-- TRANSICIÓN -->
     <script>
-        document.querySelectorAll("nav a").forEach((link) => {
-            link.addEventListener("click", function (e) {
-                e.preventDefault();
-                const url = this.href;
+      document.querySelectorAll("nav a").forEach((link) => {
+        link.addEventListener("click", function (e) {
+          e.preventDefault();
+          const url = this.href;
 
-                document.body.classList.add("fade-out");
+          document.body.classList.add("fade-out");
 
-                setTimeout(() => {
-                    window.location.href = url;
-                }, 400);
-            });
+          setTimeout(() => {
+            window.location.href = url;
+          }, 400);
         });
+      });
     </script>
-
-</body>
+  </body>
 </html>
-

@@ -197,6 +197,33 @@ html {
     margin-right: 8px;
     vertical-align: middle;
 }
+/* Estilo del submenú */
+.submenu {
+    background: #1a1a1a;        /* Fondo más oscuro para diferenciarlo */
+    padding: 8px 10px;
+    margin-left: 10px;
+    border-left: 3px solid var(--agente-acento); /* Línea naranja SHD */
+    border-radius: 4px;
+}
+
+.submenu li a {
+    font-size: 14px;
+    display: block;
+    padding: 4px 0;
+}
+
+/* Clase que oculta el submenú */
+.oculto {
+    display: none;
+}
+.img-presentacion {
+  display: block;
+  margin: 0 auto;
+  max-width: 90%;
+  height: auto;
+  max-height: 500px;
+  object-fit: contain;
+}
 
 @keyframes hunterInterference {
     0% { opacity: 1; }

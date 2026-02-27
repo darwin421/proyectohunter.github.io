@@ -2,6 +2,8 @@
 :root {
   --color-acento: var(--color-info); /* morado */
   --info-bg: #000000;
+  --color-texto: #e5e5e5; /* gris claro más legible */
+  --color-texto-suave: #c7c7c7; /* para párrafos */
 }
 
 .page-container {
@@ -21,7 +23,9 @@
 
 .sidebar h3 {
   color: var(--color-acento);
-  margin-bottom: 12px;
+  text-shadow: 0 0 6px rgba(123, 31, 162, 0.4);
+  letter-spacing: 0.5px;
+  margin-bottom: 14px;
 }
 .sidebar ul {
   list-style: none;
@@ -64,38 +68,44 @@ body {
 }
 /* --- Formulario Comunidad --- */
 .formulario-comunidad {
-    max-width: 900px;
-    margin: 40px auto;
-    padding: 20px;
-    background: linear-gradient(
-        180deg,
-        rgba(123, 31, 162, 0.06),
-        rgba(0, 0, 0, 0.35)
-    );
-    border-radius: 10px;
-    border: 1px solid rgba(123, 31, 162, 0.08);
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  background: linear-gradient(
+    180deg,
+    rgba(123, 31, 162, 0.06),
+    rgba(0, 0, 0, 0.35)
+  );
+  border-radius: 10px;
+  border: 1px solid rgba(123, 31, 162, 0.08);
 }
 
 .formulario-comunidad h2 {
-    color: var(--color-acento);
-    margin-bottom: 10px;
+  color: var(--color-acento);
+  margin-bottom: 10px;
+  text-shadow: 0 0 6px rgba(123, 31, 162, 0.4);
+  letter-spacing: 0.5px;
+  margin-bottom: 14px;
 }
 
 .formulario-comunidad p {
-    margin-bottom: 20px;
-    color: var(--color-texto);
+  margin-bottom: 20px;
+  color: var(--color-texto);
+  line-height: 1.55;
+  font-size: 15.5px;
+  color: var(--color-texto-suave);
 }
 
 /* Contenedor responsive para el iframe */
 .iframe-container {
-    width: 100%;
-    overflow: hidden;
+  width: 100%;
+  overflow: hidden;
 }
 
 .iframe-container iframe {
-    width: 100%;
-    max-width: 100%;
-    border: none;
+  width: 100%;
+  max-width: 100%;
+  border: none;
 }
 @media (max-width: 768px) {
   .btn-menu-movil {
@@ -128,6 +138,9 @@ body {
 }
 .presentacion-agente h2 {
   color: var(--color-acento);
+  text-shadow: 0 0 6px rgba(123, 31, 162, 0.4);
+  letter-spacing: 0.5px;
+  margin-bottom: 14px;
 }
 .presentacion-agente input,
 .presentacion-agente select,
@@ -155,6 +168,11 @@ body {
   background: rgba(255, 0, 0, 0.04);
   padding: 14px;
   border-radius: 8px;
+}
+.presentacion-agente p {
+  line-height: 1.55;
+  font-size: 15.5px;
+  color: var(--color-texto-suave);
 }
 
 @media (max-width: 480px) {
