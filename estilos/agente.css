@@ -8,6 +8,9 @@
   --shadow-soft: 0 8px 22px rgba(0,0,0,0.45);
   --transition-fast: 180ms cubic-bezier(.2,.9,.2,1);
 }
+.presentacion-agente h3 {
+  color: var(--agente-acento);
+}
 
 /* ================================
    CONTENEDOR PRINCIPAL
